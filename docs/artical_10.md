@@ -50,9 +50,7 @@ Continuous 한 점 $x$ 에 대해서, 가까운 Latent code가 선택됩니다.
 
 최종적으로 Continuous Image의 RGB 값은 다음과 같이 계산됩니다. 
 
-$$
-I(x) = \sum_{t \in \{ 00, 01,10,11 \}} \frac{S_t}{S} \cdot f_\theta (z_t^*, x - v_t^*)
-$$
+$$I(x) = \sum_{t \in \{ 00, 01,10,11 \}} \frac{S_t}{S} \cdot f_\theta (z_t^*, x - v_t^*)$$
 
 * $z_t^*$ : x로부터 가까운 Latent Code (t는 사분면을 나타냅니다)
 * $v_t^*$ : 가까운 Latent Code의 좌표
@@ -72,14 +70,16 @@ $$
 
 
 ### 3.1 Data Preparation 
-|<figure class="image"> <img  width=1000px src="figures/data_preparation.png"> <figcaption> This dog is cut </figcaption> </figure>|
+
+|Figure 4 Data Preparation|
 |:-:|
+|<figure class="image"> <img  width=1000px src="figures/data_preparation.png"> <figcaption> This dog is cut </figcaption> </figure>|
 
 ### 3.2 Training
 
-|<figure class="image"> <img width=1000px src="figures/training.png"> <figcaption> This dog is cut </figcaption> </figure>|
+|Figure 5 Training Image|
 |:-:|
-
+|<figure class="image"> <img width=1000px src="figures/training.png"> <figcaption> This dog is cut </figcaption> </figure>|
 
 
 ## 4. Additional Engineering 
