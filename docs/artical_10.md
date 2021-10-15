@@ -49,7 +49,8 @@ Continuous 한 점 $x$ 에 대해서, 가까운 Latent code가 선택됩니다.
 
 |Figure 3|Figure 4|
 |:-:|:-:|
-|<figure class="image"> <img width=700px src="figures/dog1.png"> <figcaption> 전체 8x8 Pixel이 있을 때, Latent Code는 4x4 개가 각 위치별로 고르게 분포되어 있습니다.   </figcaption> </figure>| <figure class="image"> <img width=690px  src="figures/dog2.png"> <figcaption> continuous 한 위치 $x$ 에 대해서 $z$* 는 $x$ 에서 가까운 4개의 Latent Code로 정해집니다.  </figcaption> </figure>| 
+|<figure class="image"> <img width=700px src="figures/dog1.png"> <figcaption>   </figcaption> </figure>| <figure class="image"> <img width=690px  src="figures/dog2.png"> <figcaption>   </figcaption> </figure>| 
+|전체 8x8 Pixel이 있을 때, Latent Code는 4x4 개가 각 위치별로 고르게 분포되어 있습니다. |continuous 한 위치 $x$ 에 대해서 $z$* 는 $x$ 에서 가까운 4개의 Latent Code로 정해집니다.|
 
 
 최종적으로 Continuous Image의 RGB 값은 다음과 같이 계산됩니다. 
