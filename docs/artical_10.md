@@ -22,8 +22,9 @@ NIR은 함수를 학습시키는 것인데, 그 목적은 다음과 같이 2가�
 포스팅에서 소개하는 논문도 CVPR 2021에 출판된 NIR 관련 논문으로 두 번째 목적 ✨ (Continuous Representation)에 대한 논문입니다. 기존 NIR과 차이점은 단순히 pixel에 대한 함수를 학습시키는 것이 아니라, discrete한 pixel에 대한 값으로부터 continuous한 좌표에 대한 RGB값을 학습시켰습니다.  
 
 ## 2. Local Implicit Image Function (LIIF)
-픽셀에 대해서 RGB 값을 유추하는 함수는 $$s = f_\theta (x)$$ 로 나타낼 수 있습니다. 입력으로 원하는 픽셀 위치 $$x$$ 가 들어오면 출력으로 RGB값 $$s$$ 를 반환합니다. 여기서 제안한 모델은 Latent코드를 이용하여 Image 에 대한 정보  $$M \in \mathbb{R}^{H\times W \times D}$$ 가 있을 때, 이를 Continuous image $$I$$ 로 학습시키는 것을 목적으로 합니다. 
-이러한 모델링은 함수를 위치 정보인 x뿐만 아니라, Latent Code에도 의존시킴으로써, 더욱 높은 성능을 얻을 수 있기 때문입니다. 
+픽셀 $$x$$ 에 대해서 RGB 값을 유추하는 함수는 $$s = f_\theta (x)$$ 로 나타낼 수 있습니다. 모델은 위치정보를 기반으로 RGB값(혹은 Grey scale)을 유추합니다. 
+ 여기서 **제안한 모델**은 Latent Code를 이용하여 Image 에 대한 정보  $$M \in \mathbb{R}^{H\times W \times D}$$ 가 있을 때, 이를 Continuous image $$I$$ 로 학습시키는 것을 목적으로 합니다. 
+이러한 모델링은 함수를 **위치 정보 $$x$$ 뿐만 아니라, Latent Code에도 의존시킴으로써**, 더욱 높은 성능을 얻을 수 있기 때문입니다. 
 
 $$ s = f_\theta (z,x) $$ 
 
