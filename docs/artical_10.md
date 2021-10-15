@@ -37,7 +37,7 @@ $$ s = f_\theta (z,x) $$
 - $x$ : Continuous space에서 위치 
 - $\theta$ : neural network의 파라미터
 - $f$ : neural network 
-- $z$ : Latent Code 
+- $$z$$ : Latent Code 
 
 
 
@@ -59,13 +59,13 @@ $$I(x) = \sum_{t \in \{ 00, 01,10,11 \}} \frac{S_t}{S} \cdot f_\theta (z_t^*, x 
 
 
 
-    $z_t^*$ : x로부터 가까운 Latent Code (t는 사분면을 나타냅니다)
-    
-    $v_t^*$ : 가까운 Latent Code의 좌표
+$z_t^*$ : x로부터 가까운 Latent Code (t는 사분면을 나타냅니다)
 
-    $S_t$ : $x$ 와 $S_t$ 에 의해서 생성되는 사각형의 넓이
-    
-    $S$ :  4가지 사각형 넓이의 합 
+$v_t^*$ : 가까운 Latent Code의 좌표
+
+$S_t$ : $x$ 와 $S_t$ 에 의해서 생성되는 사각형의 넓이
+
+$S$ :  4가지 사각형 넓이의 합 
 
 
 ## 3. Pipeline 
