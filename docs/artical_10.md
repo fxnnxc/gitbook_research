@@ -43,9 +43,9 @@ Latent Code는 $$[0, 2H]\times [0, 2W]$$ 이미지가 있을 때,  $$H \times W$
 
 > 🧐 What is the value of latent code?
 
-    Latent code값에 대한 두 가지 의문점을 집고 넘어가겠습니다. 
-    1. Latent Code값(혹은 초기값)은 무엇인가? Pretrained Encoder(EDSR 혹은 RDN)로 이미지를 인코딩한다. 따라서 **이미지마다 Latent Code는 다르게** 됩니다. 
-    2. LIIF Training 시 Latent Code는 변하는가? (Yes)
+Latent code값에 대한 두 가지 의문점을 집고 넘어가겠습니다. 
+1. Latent Code값(혹은 초기값)은 무엇인가? Pretrained Encoder(EDSR 혹은 RDN)로 이미지를 인코딩한다. 따라서 **이미지마다 Latent Code는 다르게** 됩니다. 
+2. LIIF Training 시 Latent Code는 변하는가? (Yes)
 
 |Figure 3|Figure 4|
 |:-:|:-:|
@@ -77,14 +77,14 @@ $$I(x) = \sum_{t \in \{ 00, 01,10,11 \}} \frac{S_t}{S} \cdot f_\theta (z_t^*, x 
 
 |Figure 4 Data Preparation|
 |:-:|
-|<figure class="image"> <img   src="figures/data_preparation.png"> </figure>|
+|<figure class="image"> <img  width=1600px  src="figures/data_preparation.png"> </figure>|
 |This dog is cut|
 
 ### 3.2 Training
 
 |Figure 5 Training Image|
 |:-:|
-|<figure class="image"> <img src="figures/training.png"> </figure>|
+|<figure class="image"> <img width=1600px src="figures/training.png"> </figure>|
 |This dog is cut |
 
 
