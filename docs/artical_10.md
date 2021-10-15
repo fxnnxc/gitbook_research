@@ -1,12 +1,8 @@
 # Learning Continuous Image Representation with Local Implicit Image Function 
 
-## 1. Introduction 
+## 1. Introduction : Image as a Function 
 
-고등학교 때 우리는 함수라는 개념을 배웁니다. 함수는 입력을 넣으면 무언가 값을 반환해주는 거죠. $$X$$에 따라서 $$Y$$의 값이 바뀌는데, 단순히 다항함수, 지수함수, 삼각함수처럼 고정되고 쉬울 수도 있고, 아니면 그림처럼 무지 복잡할 수도 있습니다. 
-
-이미지를 함수로 생각한다면, $$(x,y)$$ 좌표에 대해서 RGB 값을 반환하는 함수로 생각할 수 있습니다. 3D 그림으로 나타내면, 다음과 같습니다. 
-이 함수는 한눈에 봐도 굉장히 복잡하고, 여기에 맞는 다항함수나 $$Sine, Cosise$$ 함수 조합을 찾는 것도 굉장히 어려워 보입니다. 
-
+Image Representation에 대한 기초는 이미지를 함수로 나타내는데서 시작합니다.  함수는 입력을 넣으면 무언가 값을 반환해주는 거죠. $$X$$에 따라서 $$Y$$의 값이 바뀌는데, Figure 1의 다항함수, 지수함수, 삼각함수처럼 쉬울 수도 있고, 아니면 Figure 2 처럼 무지 복잡할 수도 있습니다.
 
 
 |Figure 1|Figure 2|
@@ -14,18 +10,17 @@
 |<figure class="image"> <img width=700px src="figures/function1.png"> <figcaption>   </figcaption> </figure>| <figure class="image"> <img width=690px  src="figures/function2.png"> <figcaption>   </figcaption> </figure>| 
 | 단순한 형태의 함수는 함수식을 유추하기 쉽습니다. |이미지처럼 각 픽섹 위치에 대해서 RGB값이 다양한 경우, 위치가 주어졌을 때, R,G,B를 맵핑하는 함수를 찾는 것은 어려습니다. 
 
+이미지를 함수로 생각한다면, $$(x,y)$$ 좌표에 대해서 RGB 값을 반환하는 함수로 생각할 수 있습니다.  이 함수는 한눈에 봐도 굉장히 복잡하고, 여기에 맞는 다항함수나 $$Sine, Cosise$$ 함수 조합을 찾는 것도 굉장히 어려워 보입니다. 따라서 이미지의 값을 대응시키는 함수를 찾는 것은 결코 쉬운 게 아니고 이를 인공신경망으로 학습하려는 시도가 있었습니다. 이 분야를 **Neural Implicit Represenation (NIR)** 이라고 합니다. 
 
-Neural Implicit Representation은 이 함수를 학습시키기 위한 시도입니다. 
 
-한 가지 의문점은 이렇게 함수를 학습시키는 이유가 무엇인가 입니다. 
-이미지는 그대로 RGB값을 가지고 있는데, 굳이 함수로 학습시켜야 하는 이유는 다음과 같습니다. 
+---
+
+NIR은 함수를 학습시키는 것인데, 그 목적은 다음과 같이 2가지로 생각할 수 있습니다. 
 
 1. 만일 Neural Network의 파라미터가 이미지 데이터 사이즈 보다 작다면 데이터 압축효과가 있따. 
-2. 이미지는 기본적으로 Discrete (Pixel 1, Pixel 2, ...) 인데, 연속적인 함수로 나타내서, 모든 실수에 대한 값을 알 수 있다. 
+2. ✨ 이미지는 기본적으로 Discrete (Pixel 1, Pixel 2, ...) 인데, 연속적인 함수로 나타내서, 모든 실수에 대한 값을 알 수 있다. 
 
-이러한 이유로 최근에는 Neural Implicit Representation 이 활발히 연구되고 있습니다. 
-
-포스팅에서 소개하는 논문도 CVPR 2021에 출판된 NIR 관련 논문입니다. 기존 NIR과 차이점은 단순히 pixel에 대한 함수를 학습시키는 것이 아니라, discrete한 pixel에 대한 값으로부터 continuous한 좌표에 대한 RGB값을 학습시켰다는 것 입니다. 
+포스팅에서 소개하는 논문도 CVPR 2021에 출판된 NIR 관련 논문으로 두 번째 목적(Continuous Representation)에 대한 논문입니다. 기존 NIR과 차이점은 단순히 pixel에 대한 함수를 학습시키는 것이 아니라, discrete한 pixel에 대한 값으로부터 continuous한 좌표에 대한 RGB값을 학습시켰습니다.  
 
 ## 2. Local Implicit Image Function (LIIF)
 픽셀에 대해서 RGB 값을 유추하는 함수는 $$s = f_\theta (x)$$ 로 나타낼 수 있습니다. 입력으로 원하는 픽셀 위치 $$x$$ 가 들어오면 출력으로 RGB값 $$s$$ 를 반환합니다. 여기서 제안한 모델은 Latent코드를 이용하여 Image 에 대한 정보  $$M \in \mathbb{R}^{H\times W \times D}$$ 가 있을 때, 이를 Continuous image $$I$$ 로 학습시키는 것을 목적으로 합니다. 
@@ -77,14 +72,14 @@ $$I(x) = \sum_{t \in \{ 00, 01,10,11 \}} \frac{S_t}{S} \cdot f_\theta (z_t^*, x 
 
 |Figure 4 Data Preparation|
 |:-:|
-|<figure class="image"> <img  width=1000px src="figures/data_preparation.png"> </figure>|
+|<figure class="image"> <img  width=900px src="figures/data_preparation.png"> </figure>|
 |This dog is cut|
 
 ### 3.2 Training
 
 |Figure 5 Training Image|
 |:-:|
-|<figure class="image"> <img width=1000px src="figures/training.png"> </figure>|
+|<figure class="image"> <img width=900px src="figures/training.png"> </figure>|
 |This dog is cut |
 
 
