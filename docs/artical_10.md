@@ -121,10 +121,14 @@ Data Preparation에서는 Down-sampling된 이미자와 예측할 pixel위치와
 {% tabs %}
 {% tab title="💡 Question" %}
 > 🧐 이미지에 대해서 더 높은 Resolution을 얻기 위한 Pipeline은 무엇일까?
+>
+> input의 크기는 48x48 인데, 224x224 를 얻는 방법은 무엇일까?
 {% endtab %}
 
 {% tab title="Answer" %}
+이미지의 size가 48x48 이나 224x224로 Resolution이 다를지라도, 두 이미지는 동일한 이미지를 나타내고 있습니다. 따라서 두 이미지를 모두 \[0,1]x\[0,1] 로 normalize 한다면, 픽셀 크기에 상관없는 이미지를 얻을 수 있습니다. 
 
+그래서 Data Preparation 단계에서는 Ground Truth 이미지로부터 샘플된 위치가 \[0,224]의 범위가 아닌 \[0,1] 범위입니다. 
 {% endtab %}
 {% endtabs %}
 
@@ -140,10 +144,10 @@ $$\hat{M}_{jk} = Concat(\{ M_{j+l, k+m} \}_{l,m \in \{-1,0,1\}})$$
 
 ### 4.2 Local Ensemble
 
-|         Figure 8        |         Figure 9        |
-| :---------------------: | :---------------------: |
-| ![](figures/local1.png) | ![](figures/local2.png) |
-|                         |                         |
+|                                 Figure 8                                |                        Figure 9                       |
+| :---------------------------------------------------------------------: | :---------------------------------------------------: |
+|                         ![](figures/local1.png)                         |                ![](figures/local2.png)                |
+| 만일 가장 가까운 Latent Code 하나만 고른다면, 범위를 넘어가면서, Latent Code가 급변하는 현상이 나타납니다. | 사분면에 대해서 가까운 4개를 고른다면, 선택에 대한 범위를 넘어갈 때, 절반만 바뀌게 됩니다. |
 
 ### 4.3 Cell Decoding
 
