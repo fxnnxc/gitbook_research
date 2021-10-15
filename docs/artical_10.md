@@ -24,15 +24,20 @@ NIR은 함수를 학습시키는 것인데, 그 목적은 다음과 같이 2가�
 ## 2. Local Implicit Image Function (LIIF)
 픽셀 $$x$$ 에 대해서 RGB 값을 유추하는 함수는 $$s = f_\theta (x)$$ 로 나타낼 수 있습니다. 모델은 위치정보를 기반으로 RGB값(혹은 Grey scale)을 유추합니다. 
  여기서 **제안한 모델**은 Latent Code를 이용하여 Image 에 대한 정보  $$M \in \mathbb{R}^{H\times W \times D}$$ 가 있을 때, 이를 Continuous image $$I$$ 로 학습시키는 것을 목적으로 합니다. 
-이러한 모델링은 함수를 **위치 정보 $$x$$ 뿐만 아니라, Latent Code에도 의존시킴으로써**, 더욱 높은 성능을 얻을 수 있기 때문입니다. 
+이러한 모델링은 함수를 **위치 정보 $$x$$ 뿐만 아니라, Latent Code에도 의존시킴으로써**, 더욱 높은 성능을 얻을 수 있기 때문입니다. LIIF의 모델은 다음과 같습니다. 
 
 $$ s = f_\theta (z,x) $$ 
 
+<details>
+<summary> What is $$s,x, \theta, f, z$$ ??</summary>
 - $$s$$ : 하나의 픽셀에 대한 RGB 값
 - $$x$$ : Continuous space에서 위치 
 - $$\theta$$ : neural network의 파라미터
 - $$f$$ : neural network 
 - $$z$$ : Latent Code 
+</details>
+
+여기서 
 
 
 Latent Code는 $$[0, 2H]\times [0, 2W]$$ 이미지가 있을 때, 
