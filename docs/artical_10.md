@@ -12,15 +12,14 @@ Image Representation에 대한 기초는 이미지를 함수로 나타내는데�
 
 이미지를 함수로 생각한다면, $$(x,y)$$ 좌표에 대해서 RGB 값을 반환하는 함수로 생각할 수 있습니다.  이 함수는 한눈에 봐도 굉장히 복잡하고, 여기에 맞는 다항함수나 $$Sine, Cosise$$ 함수 조합을 찾는 것도 굉장히 어려워 보입니다. 따라서 이미지의 값을 대응시키는 함수를 찾는 것은 결코 쉬운 게 아니고 이를 인공신경망으로 학습하려는 시도가 있었습니다. 이 분야를 **Neural Implicit Represenation (NIR)** 이라고 합니다. 
 
-
----
+### Why NIR?
 
 NIR은 함수를 학습시키는 것인데, 그 목적은 다음과 같이 2가지로 생각할 수 있습니다. 
 
-1. 만일 Neural Network의 파라미터가 이미지 데이터 사이즈 보다 작다면 데이터 압축효과가 있따. 
-2. ✨ 이미지는 기본적으로 Discrete (Pixel 1, Pixel 2, ...) 인데, 연속적인 함수로 나타내서, 모든 실수에 대한 값을 알 수 있다. 
+1. 만일 Neural Network의 파라미터가 이미지 데이터 사이즈 보다 작다면 **데이터 압축효과**가 있다. 
+2. 이미지는 기본적으로 Discrete (Pixel 1, Pixel 2, ...) 인데, **연속적인 함수**로 나타냄으로써 모든 실수에 대한 값을 알 수 있다. ✨
 
-포스팅에서 소개하는 논문도 CVPR 2021에 출판된 NIR 관련 논문으로 두 번째 목적(Continuous Representation)에 대한 논문입니다. 기존 NIR과 차이점은 단순히 pixel에 대한 함수를 학습시키는 것이 아니라, discrete한 pixel에 대한 값으로부터 continuous한 좌표에 대한 RGB값을 학습시켰습니다.  
+포스팅에서 소개하는 논문도 CVPR 2021에 출판된 NIR 관련 논문으로 두 번째 목적 ✨ (Continuous Representation)에 대한 논문입니다. 기존 NIR과 차이점은 단순히 pixel에 대한 함수를 학습시키는 것이 아니라, discrete한 pixel에 대한 값으로부터 continuous한 좌표에 대한 RGB값을 학습시켰습니다.  
 
 ## 2. Local Implicit Image Function (LIIF)
 픽셀에 대해서 RGB 값을 유추하는 함수는 $$s = f_\theta (x)$$ 로 나타낼 수 있습니다. 입력으로 원하는 픽셀 위치 $$x$$ 가 들어오면 출력으로 RGB값 $$s$$ 를 반환합니다. 여기서 제안한 모델은 Latent코드를 이용하여 Image 에 대한 정보  $$M \in \mathbb{R}^{H\times W \times D}$$ 가 있을 때, 이를 Continuous image $$I$$ 로 학습시키는 것을 목적으로 합니다. 
