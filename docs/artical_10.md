@@ -37,7 +37,7 @@ $$s = f_\theta (z,x)$$
 
 ### Latent Code for continuous position
 
-Latent Code는 $$[0, 2H]\times [0, 2W]$$ 이미지가 있을 때, $$H \times W$$ 개의 Latent Code 가 그림처럼 위치마다 있습니다. Latent Code의 개수는 이미지의 사이즈의 1/4만큼 있으며, 원하는 위치 $$x$$ 가 있을 때, 가까운 Latent code를 선택해주면 됩니다. Figure 4에서는 $$x$$ 위치에 대해서 4 개의 Latent Code를 선택하였는데, 이를 논문에서는 **Local ensemble**이라고 부릅니다. 이를 사용하는 이유는 [4.3](artical\_10.md#42-local-ensemble)에서 다루겠습니다.
+Latent Code는 $$[0,H]\times [0,W]$$ 이미지가 있을 때, $$H \times W$$ 개의 Latent Code 가 그림처럼 위치마다 있습니다. Latent Code의 개수는 이미지의 사이즈의 1/4만큼 있으며, 원하는 위치 $$x$$ 가 있을 때, 가까운 Latent code를 선택해주면 됩니다. Figure 4에서는 $$x$$ 위치에 대해서 4 개의 Latent Code를 선택하였는데, 이를 논문에서는 **Local ensemble**이라고 부릅니다. 이를 사용하는 이유는 [4.3](artical\_10.md#42-local-ensemble)에서 다루겠습니다.
 
 |                            Figure 3                           |                                  Figure 4                                  |
 | :-----------------------------------------------------------: | :------------------------------------------------------------------------: |
