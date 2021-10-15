@@ -40,9 +40,6 @@ $$ s = f_\theta (z,x) $$
 - $$z$$ : Latent Code 
 
 
-Testing \[math \] Testing
-
-
 Latent Code는 $$[0, 2H]\times [0, 2W]$$ 이미지가 있을 때, 
 $$H \times W$$ 개의 Latent 코드가 그림처럼 위치마다 있습니다. 
 
@@ -51,7 +48,7 @@ Continuous 한 점 $$x$$ 에 대해서, 가까운 Latent code가 선택됩니다
 
 |Figure 3|Figure 4|
 |:-:|:-:|
-|<figure class="image"> <img width=700px src="figures/dog1.png"> <figcaption>   </figcaption> </figure>| <figure class="image"> <img width=690px  src="figures/dog2.png"> <figcaption>   </figcaption> </figure>| 
+|<figure class="image"> <img width=700px src="figures/dog1.png">  </figure>| <figure class="image"> <img width=690px  src="figures/dog2.png">  </figure>| 
 |전체 8x8 Pixel이 있을 때, Latent Code는 4x4 개가 각 위치별로 고르게 분포되어 있습니다. |continuous 한 위치 $$x$$ 에 대해서 $$z^*$$ 는 $$x$$ 에서 가까운 4개의 Latent Code로 정해집니다.|
 
 
@@ -80,13 +77,15 @@ $$I(x) = \sum_{t \in \{ 00, 01,10,11 \}} \frac{S_t}{S} \cdot f_\theta (z_t^*, x 
 
 |Figure 4 Data Preparation|
 |:-:|
-|<figure class="image"> <img  width=1000px src="figures/data_preparation.png"> <figcaption> This dog is cut </figcaption> </figure>|
+|<figure class="image"> <img  width=1000px src="figures/data_preparation.png"> </figure>|
+|This dog is cut|
 
 ### 3.2 Training
 
 |Figure 5 Training Image|
 |:-:|
-|<figure class="image"> <img width=1000px src="figures/training.png"> <figcaption> This dog is cut </figcaption> </figure>|
+|<figure class="image"> <img width=1000px src="figures/training.png"> </figure>|
+|This dog is cut |
 
 
 ## 4. Additional Engineering 
