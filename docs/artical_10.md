@@ -77,14 +77,14 @@ $$I(x) = \sum_{t \in \{ 00, 01,10,11 \}} \frac{S_t}{S} \cdot f_\theta (z_t^*, x 
 
 |Figure 4 Data Preparation|
 |:-:|
-|<figure class="image"> <img  width=1600px  src="figures/data_preparation.png"> </figure>|
+|<figure class="image"> <img  src="figures/data_preparation.png" width=1600> </figure>|
 |This dog is cut|
 
 ### 3.2 Training
 
 |Figure 5 Training Image|
 |:-:|
-|<figure class="image"> <img width=1600px src="figures/training.png"> </figure>|
+|<figure class="image"> <img  src="figures/training.png" width=1600> </figure>|
 |This dog is cut |
 
 
