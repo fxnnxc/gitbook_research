@@ -29,7 +29,7 @@ NIR은 함수를 학습시키는 것인데, 그 목적은 다음과 같이 2가�
 $$ s = f_\theta (z,x) $$ 
 
 <details>
-<summary> What is $$s,x, \theta, f, z$$ ??</summary>
+<summary> Click here to see Parameters Information</summary>
 - $$s$$ : 하나의 픽셀에 대한 RGB 값
 - $$x$$ : Continuous space에서 위치 
 - $$\theta$$ : neural network의 파라미터
