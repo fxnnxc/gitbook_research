@@ -27,8 +27,7 @@ NIR은 함수를 학습시키는 것인데, 그 목적은 다음과 같이 2가�
 
 ### Definition
 픽셀 $$x$$ 에 대해서 RGB 값을 유추하는 함수는 $$s = f_\theta (x)$$ 로 나타낼 수 있습니다. 모델은 위치정보를 기반으로 RGB값(혹은 Grey scale)을 유추합니다. 
- 여기서 **제안한 모델**은 Latent Code를 이용하여 Image 에 대한 정보  $$M \in \mathbb{R}^{H\times W \times D}$$ 가 있을 때, 이를 Continuous image $$I$$ 로 학습시키는 것을 목적으로 합니다. 
-이러한 모델링은 함수를 **위치 정보 $$x$$ 뿐만 아니라, Latent Code에도 의존시킴으로써**, 더욱 높은 성능을 얻을 수 있기 때문입니다. LIIF의 모델은 다음과 같습니다. 
+ 여기서 **제안한 모델**은 Latent Code를 이용하여 Image 에 대한 정보  $$M \in \mathbb{R}^{H\times W \times D}$$ 가 있을 때, 이를 Continuous image $$I$$ 로 학습시키는 것을 목적으로 합니다. 이러한 모델링은 함수를 **위치 정보 $$x$$ 뿐만 아니라, Latent Code에도 의존시킴으로써**, 더욱 높은 성능을 얻을 수 있기 때문입니다. LIIF의 모델은 다음과 같습니다. 
 
 $$ s = f_\theta (z,x) $$ 
 
@@ -40,23 +39,24 @@ $$ s = f_\theta (z,x) $$
 
 ### Latent Code for continuous position
 
-Latent Code는 $$[0, 2H]\times [0, 2W]$$ 이미지가 있을 때, 
-$$H \times W$$ 개의 Latent 코드가 그림처럼 위치마다 있습니다. 
+Latent Code는 $$[0, 2H]\times [0, 2W]$$ 이미지가 있을 때,  $$H \times W$$ 개의 Latent Code 가 그림처럼 위치마다 있습니다. Latent Code의 개수는 이미지의 사이즈의 1/4만큼 있으며, 원하는 위치 $$x$$ 가 있을 때,  가까운 Latent code를 선택해주면 됩니다. Figure 4에서는 $$x$$ 위치에 대해서 4 개의 Latent Code를 선택하였는데, 이를 논문에서는 **Local ensemble**이라고 부릅니다. 이를 사용하는 이유는 [4.3](#42-local-ensemble)에서 다루겠습니다. 
 
-Continuous 한 점 $$x$$ 에 대해서, 가까운 Latent code가 선택됩니다. 
+> 🧐 What is the value of latent code?
 
+    Latent code값에 대한 두 가지 의문점을 집고 넘어가겠습니다. 
+    1. Latent Code값(혹은 초기값)은 무엇인가? Pretrained Encoder(EDSR 혹은 RDN)로 이미지를 인코딩한다. 따라서 **이미지마다 Latent Code는 다르게** 됩니다. 
+    2. LIIF Training 시 Latent Code는 변하는가? (Yes)
 
 |Figure 3|Figure 4|
 |:-:|:-:|
 |<figure class="image"> <img width=700px src="figures/dog1.png">  </figure>| <figure class="image"> <img width=690px  src="figures/dog2.png">  </figure>| 
 |전체 8x8 Pixel이 있을 때, Latent Code는 4x4 개가 각 위치별로 고르게 분포되어 있습니다. |continuous 한 위치 $$x$$ 에 대해서 $$z^*$$ 는 $$x$$ 에서 가까운 4개의 Latent Code로 정해집니다.|
 
+### Continuous Representation using Latent Code
 
-최종적으로 Continuous Image의 RGB 값은 다음과 같이 계산됩니다. 
+Latent Code를 기반으로 Continuous Image의 RGB 값은 다음과 같이 계산됩니다. 
 
 $$I(x) = \sum_{t \in \{ 00, 01,10,11 \}} \frac{S_t}{S} \cdot f_\theta (z_t^*, x - v_t^*)$$
-
-
 
 - $$z_t^*$$ : x로부터 가까운 Latent Code (t는 사분면을 나타냅니다)
 - $$v_t^*$$ : 가까운 Latent Code의 좌표
@@ -77,14 +77,14 @@ $$I(x) = \sum_{t \in \{ 00, 01,10,11 \}} \frac{S_t}{S} \cdot f_\theta (z_t^*, x 
 
 |Figure 4 Data Preparation|
 |:-:|
-|<figure class="image"> <img  width=900px src="figures/data_preparation.png"> </figure>|
+|<figure class="image"> <img   src="figures/data_preparation.png"> </figure>|
 |This dog is cut|
 
 ### 3.2 Training
 
 |Figure 5 Training Image|
 |:-:|
-|<figure class="image"> <img width=900px src="figures/training.png"> </figure>|
+|<figure class="image"> <img src="figures/training.png"> </figure>|
 |This dog is cut |
 
 
@@ -92,7 +92,9 @@ $$I(x) = \sum_{t \in \{ 00, 01,10,11 \}} \frac{S_t}{S} \cdot f_\theta (z_t^*, x 
 
 ### 4.1 Feature Unfolding
 
-### 4.2 Cell Decoding 
+### 4.2 Local Ensemble 
+
+### 4.3 Cell Decoding 
 
 
 
