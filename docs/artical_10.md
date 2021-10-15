@@ -41,6 +41,11 @@ $$ s = f_\theta (z,x) $$
 
 Latent Code는 $$[0, 2H]\times [0, 2W]$$ 이미지가 있을 때,  $$H \times W$$ 개의 Latent Code 가 그림처럼 위치마다 있습니다. Latent Code의 개수는 이미지의 사이즈의 1/4만큼 있으며, 원하는 위치 $$x$$ 가 있을 때,  가까운 Latent code를 선택해주면 됩니다. Figure 4에서는 $$x$$ 위치에 대해서 4 개의 Latent Code를 선택하였는데, 이를 논문에서는 **Local ensemble**이라고 부릅니다. 이를 사용하는 이유는 [4.3](#42-local-ensemble)에서 다루겠습니다. 
 
+|Figure 3|Figure 4|
+|:-:|:-:|
+|<figure class="image"> <img width=700px src="figures/dog1.png">  </figure>| <figure class="image"> <img width=690px  src="figures/dog2.png">  </figure>| 
+|전체 8x8 Pixel이 있을 때, Latent Code는 4x4 개가 각 위치별로 고르게 분포되어 있습니다. |continuous 한 위치 $$x$$ 에 대해서 $$z^*$$ 는 $$x$$ 에서 가까운 4개의 Latent Code로 정해집니다.|
+
 > 🧐 What is the value of latent code? 
 
 Latent code값에 대한 두 가지 의문점을 집고 넘어가겠습니다. 
@@ -49,10 +54,7 @@ Latent code값에 대한 두 가지 의문점을 집고 넘어가겠습니다.
 2. *여러 이미지가 있을 때, Latent Code는 공유되는가?* : (No) Pretrained Model로부터 이미지를 인코딩하기 때문에 이미지마다 Latent Code가 생긴다. 
 3. *LIIF Training 시 Latent Code는 변하는가?* (Yes), Freezing 하지 않는다. 
 
-|Figure 3|Figure 4|
-|:-:|:-:|
-|<figure class="image"> <img width=700px src="figures/dog1.png">  </figure>| <figure class="image"> <img width=690px  src="figures/dog2.png">  </figure>| 
-|전체 8x8 Pixel이 있을 때, Latent Code는 4x4 개가 각 위치별로 고르게 분포되어 있습니다. |continuous 한 위치 $$x$$ 에 대해서 $$z^*$$ 는 $$x$$ 에서 가까운 4개의 Latent Code로 정해집니다.|
+
 
 ### Continuous Representation using Latent Code
 
@@ -65,7 +67,7 @@ $$I(x) = \sum_{t \in \{ 00, 01,10,11 \}} \frac{S_t}{S} \cdot f_\theta (z_t^*, x 
 - $$S_t$$ : $$x$$ 와 $$S_t$$ 에 의해서 생성되는 사각형의 넓이
 - $$S$$ :  4가지 사각형 넓이의 합 
 
-여기서 LIIF 의 장점이 나타납니다. 입력으로 Latent Code와의 거리 차이가 주어지기 때문에, continuous 한 거리 차이를 입력으로 넣게 된다면, 이미지에 대한 continuous representation을 얻게 됩니다. 
+여기서 LIIF 의 장점이 나타납니다. 입력으로 Latent Code와의 거리 차이가 주어지기 때문에, continuous 한 거리 차이를 입력으로 넣게 된다면, 이미지에 대한 continuous representation을 얻게 됩니다. Figure 5에서 나타나듯이, 연속적인 $$x$$를 선택할 수 있습니다. 이를 통해서 모든 $$x$$ 들은 Latent Code의 위치로부터 $$x - v_t^*$$ 값이 계산됩니다. 
 
 
 |Figure 5 |
@@ -76,41 +78,76 @@ $$I(x) = \sum_{t \in \{ 00, 01,10,11 \}} \frac{S_t}{S} \cdot f_\theta (z_t^*, x 
 
 ## 🔖 3. Pipeline 
 
-이 연구에서 목표는 Pixel로 주어진 이미지에 대해서 Continuous 한 성질을 학습시키는 것 입니다. 이를 위해서 두 단계를 거칩니다. 
+Latent Code와 LIIF 함수의 의미를 살펴봤습니다. 주어진 데이터에 대해서 해당 모델을 학습시키기 위해서 저자는 **Self-Supervised Learning** 방법을 제안하였습니다. 이는 Continuous 한 성질을 학습시키는 것으로 이 두 단계를 거칩니다. 
 
-1. Data Prepartion 단계
+1. Data Preparation 단계
 2. Training 단계
 
 
+###  Data Preparation 
 
-### 3.1 Data Preparation 
+Data Preparation에서는 Down-sampling된 이미자와 예측할 pixel위치와 RGB값을 준비합니다. Figure 6에 나타나있듯이, 주어진 이미지를 Down-sampling하여 크기를 줄이고 이 정보로부터 사이즈가 큰 원래 이미지의 픽셀에 대한 RGB를 예측합니다. 
+즉, Higer resolution을 타겟팅하여 학습하고자 합니다. 
 
-|Figure 4 Data Preparation|
+|Figure 6 Data Preparation|
 |:-:|
 |<figure class="image"> <img  src="figures/data_preparation.png" width=1600> </figure>|
 |This dog is cut|
 
-### 3.2 Training
+### Training
 
+학습할 때는 Downsampling된 이미지($$48\times48$$)를 pretrained encoder에 넣어서 feature vector를 뽑아줍니다. 이 값이 Latent Code 역할을 하며, pretrained encoder는 이미지의 사이즈를 그대로 유지해줍니다. Data Preparation 단계에서 얻은 $$x_{hr}$$의 위치에 대한 Pixel값을 LIIF model에 $$x_{hr}$$과 넣어줌으로써, 원하는 RGB값 $$S_{hr}$$을 예측합니다. 이후 실제 값과 $$L1$$ Loss로 계산해주면 학습이 됩니다. 
+
+* 인코더의 역할은 이미지 개별에 대한 Latent Code를 뽑아내는 것 입니다. 따라서 다양한 이미지 샘플에 대한 학습이 가능합니다. 기존에 NIR이 이미지 하나에 대해서 Fitting 하는 것과 차이가 있습니다. 
+ 
 |Figure 5 Training Image|
 |:-:|
 |<figure class="image"> <img  src="figures/training.png" width=1600> </figure>|
 |This dog is cut |
 
 
+> 🧐 이미지에 대해서 더 높은 Resolution을 얻기 위한 Pipeline은 무엇일까?
+
+
+
+
 ## 4. Additional Engineering 
+
+LIIF 방법에 추가적인 방법들을 통해서 성능을 올릴 수 있습니다. 여기서는 총 3개의 방법이 제안되며, 셋다 사용했을 때, 가장 좋은 성능을 보입니다. 
 
 ### 4.1 Feature Unfolding
 
+Encoder로부터 나온 Feature (Latent Code)에 대해서, 주변 3x3에 대한 concatenation을 함으로써, 위치에 대한 표현력을 높입니다. 이 경우, input의 dimesion에 대한 size는 9배 증가하게 됩니다. 
+
+$$ \hat{M}_{jk} = Concat(\{ M_{j+l, k+m} \}_{l,m \in \{-1,0,1\}})$$ 
+
 ### 4.2 Local Ensemble 
+
+|Figure 6|Figure 7|
+|:-:|:-:|
+|<figure class="image"> <img height=250px src="figures/local1.png">  </figure>| <figure class="image"> <img height=250px  src="figures/local2.png">  </figure>| 
+| | |
 
 ### 4.3 Cell Decoding 
 
+LIIF 모델은 위치에 대한 정보와 근처 Latent Code의 정보를 줍니다. 하지만 우리가 어느 정도의 Resolution을 목표로 하는지 알려주지 못합니다. 예를 들어서, $$48\times 48$$ 에서 $$224 \times 224$$ 로 해상도를 높일 때, 좌표에 대한 정보는 주지만, 우리가 목표로 하는 Decoding Cell의 사이즈를 주지 못합니다. 예시에서는 해당 위치로부터 $2\times2$의 크기를 원한다는 것을 알려줘야 합니다. Cell Decoding을 포함한 LIIF 는 다음과 같습니다. 
 
+$$s = f_{cell} (z, [x,c])$$
 
+* $$c = [c_h, c_w]$$ 
 
+기존 Pixcel값에 Cell 크기를 추가적으로 붙여서 입력으로 넣어줍니다. 
 
 ## 5. Experiments 
+
+### High Resolution benchmark
+
+<figure class="image"> <img height=250px src="figures/exp1.png">  </figure>
+
+
+
+### Continuous Representation 
+<figure class="image"> <img height=350px src="figures/exp2.png">  </figure>
 
 
 ## 6. Conclusion 
@@ -128,42 +165,3 @@ $$I(x) = \sum_{t \in \{ 00, 01,10,11 \}} \frac{S_t}{S} \cdot f_\theta (z_t^*, x 
 * [RDN]()
 
 ## References
-
-
----
-
-|<figure class="image"> <img width=400 src="figures/figure1.png"> <figcaption> This dog is cut </figcaption> </figure>|
-|:-:|
-
-This dog is cute ^_^ 
-
-Inline latex $ax + b$  is working?
-
-
-$$ 
-ax + b  = c\\
-cx + d = e
-$$ 
-
-
-> This test comes from other site 
-
-
-|<figure class="image"> <img src="figures/figure3_1.png"> <figcaption> dog 1  </figcaption> </figure>| <figure class="image"> <img src="figures/figure3_2.png"> <figcaption> dog2 </figcaption> </figure>| 
-|:-:|:-:|
-
-
-## Awesome...
-
---- 
-
-* Emojies 😀 😃 😄 😁 😆 😅 😂 🤣 [Here](https://getemoji.com/)
-* *Wow* 
-* **Wow**
-![badge](https://img.shields.io/static/v1?label=Bumjin&message=Park&color=blue)
-
----
-
-
-## References 
-1. SAIL 
