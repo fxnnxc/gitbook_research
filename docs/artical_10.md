@@ -9,9 +9,9 @@
 
 
 
-|<figure class="image"> <img width=700px src="figures/function1.png"> <figcaption> 단순한 형태의 함수는 함수식을 유추하기 쉽습니다.    </figcaption> </figure>| <figure class="image"> <img width=690px  src="figures/function2.png"> <figcaption> 이미지처럼 각 픽섹 위치에 대해서 RGB값이 다양한 경우, 위치가 주어졌을 때, R,G,B를 맵핑하는 함수를 찾는 것은 어려습니다.   </figcaption> </figure>| 
+|Figure 1|Figure 2|
 |:-:|:-:|
-
+|<figure class="image"> <img width=700px src="figures/function1.png"> <figcaption> 단순한 형태의 함수는 함수식을 유추하기 쉽습니다.    </figcaption> </figure>| <figure class="image"> <img width=690px  src="figures/function2.png"> <figcaption> 이미지처럼 각 픽섹 위치에 대해서 RGB값이 다양한 경우, 위치가 주어졌을 때, R,G,B를 맵핑하는 함수를 찾는 것은 어려습니다.   </figcaption> </figure>| 
 
 
 Neural Implicit Representation은 이 함수를 학습시키기 위한 시도입니다. 
@@ -32,11 +32,11 @@ Neural Implicit Representation은 이 함수를 학습시키기 위한 시도입
 
 $$ s = f_\theta (z,x) $$ 
 
-* $s$ : 하나의 픽셀에 대한 RGB 값
-* $x$ : Continuous space에서 위치 
-* $\theta$ : neural network의 파라미터
-* $f$ : neural network 
-* $z$ : Latent Code 
+- $s$ : 하나의 픽셀에 대한 RGB 값
+- $x$ : Continuous space에서 위치 
+- $\theta$ : neural network의 파라미터
+- $f$ : neural network 
+- $z$ : Latent Code 
 
 
 
@@ -45,8 +45,11 @@ $H \times W$ 개의 Latent 코드가 그림처럼 위치마다 있습니다.
 
 Continuous 한 점 $x$ 에 대해서, 가까운 Latent code가 선택됩니다. 
 
-|<figure class="image"> <img width=700px src="figures/dog1.png"> <figcaption> 전체 8x8 Pixel이 있을 때, Latent Code는 4x4 개가 각 위치별로 고르게 분포되어 있습니다.   </figcaption> </figure>| <figure class="image"> <img width=690px  src="figures/dog2.png"> <figcaption> continuous 한 위치 $x$ 에 대해서 $z$* 는 $x$ 에서 가까운 4개의 Latent Code로 정해집니다.  </figcaption> </figure>| 
+
+|Figure 3|Figure 4|
 |:-:|:-:|
+|<figure class="image"> <img width=700px src="figures/dog1.png"> <figcaption> 전체 8x8 Pixel이 있을 때, Latent Code는 4x4 개가 각 위치별로 고르게 분포되어 있습니다.   </figcaption> </figure>| <figure class="image"> <img width=690px  src="figures/dog2.png"> <figcaption> continuous 한 위치 $x$ 에 대해서 $z$* 는 $x$ 에서 가까운 4개의 Latent Code로 정해집니다.  </figcaption> </figure>| 
+
 
 최종적으로 Continuous Image의 RGB 값은 다음과 같이 계산됩니다. 
 
@@ -64,8 +67,6 @@ $$I(x) = \sum_{t \in \{ 00, 01,10,11 \}} \frac{S_t}{S} \cdot f_\theta (z_t^*, x 
 
 1. Data Prepartion 단계
 2. Training 단계
-
-
 
 
 
