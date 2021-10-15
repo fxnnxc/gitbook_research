@@ -30,14 +30,21 @@ $$ s = f_\theta (z,x) $$
 
 
 
+<details markdown="1"><summary>접기/펼치기</summary><!--summary 아래 빈칸 공백 두고 내용을 적는공간--></details>
+
+
+
 <details markdown="1">
 <summary> Click here to see Parameters Information</summary>
+
 - $$s$$ : 하나의 픽셀에 대한 RGB 값
 - $$x$$ : Continuous space에서 위치 
 - $$\theta$$ : neural network의 파라미터
 - $$f$$ : neural network 
 - $$z$$ : Latent Code 
+
 </details>
+
 
 여기서 
 
