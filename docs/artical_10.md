@@ -72,12 +72,12 @@ $$
 
 
 ### 3.1 Data Preparation 
-|<figure class="image"> <img src="figures/data_preparation.png"> <figcaption> This dog is cut </figcaption> </figure>|
+|<figure class="image"> <img  width=1000px src="figures/data_preparation.png"> <figcaption> This dog is cut </figcaption> </figure>|
 |:-:|
 
 ### 3.2 Training
 
-|<figure class="image"> <img  src="figures/training.png"> <figcaption> This dog is cut </figcaption> </figure>|
+|<figure class="image"> <img width=1000px src="figures/training.png"> <figcaption> This dog is cut </figcaption> </figure>|
 |:-:|
 
 
