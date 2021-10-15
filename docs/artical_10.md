@@ -1,6 +1,8 @@
 # Learning Continuous Image Representation with Local Implicit Image Function 
 
-## 1. Introduction : Image as a Function 
+## 🔖 1. Introduction
+
+### Image as a Function 
 
 Image Representation에 대한 기초는 이미지를 함수로 나타내는데서 시작합니다.  함수는 입력을 넣으면 무언가 값을 반환해주는 거죠. $$X$$에 따라서 $$Y$$의 값이 바뀌는데, Figure 1의 다항함수, 지수함수, 삼각함수처럼 쉬울 수도 있고, 아니면 Figure 2 처럼 무지 복잡할 수도 있습니다.
 
@@ -21,33 +23,22 @@ NIR은 함수를 학습시키는 것인데, 그 목적은 다음과 같이 2가�
 
 포스팅에서 소개하는 논문도 CVPR 2021에 출판된 NIR 관련 논문으로 두 번째 목적 ✨ (Continuous Representation)에 대한 논문입니다. 기존 NIR과 차이점은 단순히 pixel에 대한 함수를 학습시키는 것이 아니라, discrete한 pixel에 대한 값으로부터 continuous한 좌표에 대한 RGB값을 학습시켰습니다.  
 
-## 2. Local Implicit Image Function (LIIF)
+## 🔖 2. Local Implicit Image Function (LIIF)
+
+### Definition
 픽셀 $$x$$ 에 대해서 RGB 값을 유추하는 함수는 $$s = f_\theta (x)$$ 로 나타낼 수 있습니다. 모델은 위치정보를 기반으로 RGB값(혹은 Grey scale)을 유추합니다. 
  여기서 **제안한 모델**은 Latent Code를 이용하여 Image 에 대한 정보  $$M \in \mathbb{R}^{H\times W \times D}$$ 가 있을 때, 이를 Continuous image $$I$$ 로 학습시키는 것을 목적으로 합니다. 
 이러한 모델링은 함수를 **위치 정보 $$x$$ 뿐만 아니라, Latent Code에도 의존시킴으로써**, 더욱 높은 성능을 얻을 수 있기 때문입니다. LIIF의 모델은 다음과 같습니다. 
 
 $$ s = f_\theta (z,x) $$ 
 
-
-
-<details markdown="1"><summary>접기/펼치기</summary><!--summary 아래 빈칸 공백 두고 내용을 적는공간--></details>
-
-
-
-<details markdown="1">
-<summary> Click here to see Parameters Information</summary>
-
 - $$s$$ : 하나의 픽셀에 대한 RGB 값
 - $$x$$ : Continuous space에서 위치 
-- $$\theta$$ : neural network의 파라미터
-- $$f$$ : neural network 
 - $$z$$ : Latent Code 
+- $$f, \theta$$ :neural network ,  neural network의 파라미터
 
-</details>
 
-
-여기서 
-
+### Latent Code for continuous position
 
 Latent Code는 $$[0, 2H]\times [0, 2W]$$ 이미지가 있을 때, 
 $$H \times W$$ 개의 Latent 코드가 그림처럼 위치마다 있습니다. 
@@ -73,7 +64,7 @@ $$I(x) = \sum_{t \in \{ 00, 01,10,11 \}} \frac{S_t}{S} \cdot f_\theta (z_t^*, x 
 - $$S$$ :  4가지 사각형 넓이의 합 
 
 
-## 3. Pipeline 
+## 🔖 3. Pipeline 
 
 이 연구에서 목표는 Pixel로 주어진 이미지에 대해서 Continuous 한 성질을 학습시키는 것 입니다. 이를 위해서 두 단계를 거칩니다. 
 
