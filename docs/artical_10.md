@@ -41,11 +41,13 @@ $$ s = f_\theta (z,x) $$
 
 Latent Code는 $$[0, 2H]\times [0, 2W]$$ 이미지가 있을 때,  $$H \times W$$ 개의 Latent Code 가 그림처럼 위치마다 있습니다. Latent Code의 개수는 이미지의 사이즈의 1/4만큼 있으며, 원하는 위치 $$x$$ 가 있을 때,  가까운 Latent code를 선택해주면 됩니다. Figure 4에서는 $$x$$ 위치에 대해서 4 개의 Latent Code를 선택하였는데, 이를 논문에서는 **Local ensemble**이라고 부릅니다. 이를 사용하는 이유는 [4.3](#42-local-ensemble)에서 다루겠습니다. 
 
-> 🧐 What is the value of latent code?
+> 🧐 What is the value of latent code? 
 
 Latent code값에 대한 두 가지 의문점을 집고 넘어가겠습니다. 
-1. Latent Code값(혹은 초기값)은 무엇인가? Pretrained Encoder(EDSR 혹은 RDN)로 이미지를 인코딩한다. 따라서 **이미지마다 Latent Code는 다르게** 됩니다. 
-2. LIIF Training 시 Latent Code는 변하는가? (Yes)
+
+1. *Latent Code값(혹은 초기값)은 무엇인가?* Pretrained Encoder(EDSR 혹은 RDN)로 이미지를 인코딩한다.
+2. *여러 이미지가 있을 때, Latent Code는 공유되는가?* : (No) Pretrained Model로부터 이미지를 인코딩하기 때문에 이미지마다 Latent Code가 생긴다. 
+3. *LIIF Training 시 Latent Code는 변하는가?* (Yes), Freezing 하지 않는다. 
 
 |Figure 3|Figure 4|
 |:-:|:-:|
@@ -54,7 +56,7 @@ Latent code값에 대한 두 가지 의문점을 집고 넘어가겠습니다.
 
 ### Continuous Representation using Latent Code
 
-Latent Code를 기반으로 Continuous Image의 RGB 값은 다음과 같이 계산됩니다. 
+이미지에 대한 Latent Code가 고정되어 있으므로 이를 기반으로 Continuous Image의 $$x$$ 좌표에 대한 RGB 값은 Latent Code와 $$x$$ 의 위치 차이를 입력으로 넣어서 계산됩니다. 
 
 $$I(x) = \sum_{t \in \{ 00, 01,10,11 \}} \frac{S_t}{S} \cdot f_\theta (z_t^*, x - v_t^*)$$
 
@@ -62,6 +64,14 @@ $$I(x) = \sum_{t \in \{ 00, 01,10,11 \}} \frac{S_t}{S} \cdot f_\theta (z_t^*, x 
 - $$v_t^*$$ : 가까운 Latent Code의 좌표
 - $$S_t$$ : $$x$$ 와 $$S_t$$ 에 의해서 생성되는 사각형의 넓이
 - $$S$$ :  4가지 사각형 넓이의 합 
+
+여기서 LIIF 의 장점이 나타납니다. 입력으로 Latent Code와의 거리 차이가 주어지기 때문에, continuous 한 거리 차이를 입력으로 넣게 된다면, 이미지에 대한 continuous representation을 얻게 됩니다. 
+
+
+|Figure 5 |
+|:-:|
+|<figure class="image"> <img width=700px src="figures/continuous.png">  </figure>|
+|Continuous Image|
 
 
 ## 🔖 3. Pipeline 
