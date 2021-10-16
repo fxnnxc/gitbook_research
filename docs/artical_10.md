@@ -60,13 +60,17 @@ _**Q1.** Latent Code값(혹은 초기값)은 무엇인가?_
 
 **A1.** Pretrained Encoder(EDSR 혹은 RDN)로 이미지를 인코딩한다
 
-_\*\*Q2. \*\*여러 이미지가 있을 때, Latent Code는 공유되는가?_ :
 
-\*\*A2. \*\*(No) Pretrained Model로부터 이미지를 인코딩하기 때문에 이미지마다 Latent Code가 생긴다.
 
-_\*\*Q3. \*\*LIIF Training 시 Latent Code는 변하는가?_
+_**Q2.**여러 이미지가 있을 때, Latent Code는 공유되는가?_ :
 
-\*\*A3. \*\*(Yes), Freezing 하지 않는다.
+**A2.** (No) Pretrained Model로부터 이미지를 인코딩하기 때문에 이미지마다 Latent Code가 생긴다.
+
+
+
+_**Q3. **LIIF Training 시 Latent Code는 변하는가?_
+
+**A3.**(Yes), Freezing 하지 않는다.
 {% endhint %}
 
 ### Continuous Representation using Latent Code
