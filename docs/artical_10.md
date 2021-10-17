@@ -1,6 +1,6 @@
 # Learning Continuous Image Representation with Local Implicit Image Function
 
-## 🔖 1. Introduction
+## 📑 1. Introduction
 
 ### Image as a Function
 
@@ -22,7 +22,7 @@ NIR은 함수를 학습시키는 것인데, 그 목적은 다음과 같이 2가�
 
 포스팅에서 소개하는 논문도 **CVPR 2021**에 출판된 NIR 관련 논문으로 **두 번째 목적 (Continuous Representation)**에 대한 논문입니다. 기존 NIR과 차이점은 단순히 pixel에 대한 함수를 학습시키는 것이 아니라, discrete한 pixel에 대한 값으로부터 continuous한 좌표에 대한 RGB값을 학습시켰습니다.
 
-## 🔖 2. Local Implicit Image Function (LIIF)
+## 📑 2. Local Implicit Image Function (LIIF)
 
 ### Definition
 
@@ -95,7 +95,7 @@ $$I(x) = \sum_{t \in \{ 00, 01,10,11 \}} \frac{S_t}{S} \cdot f_\theta (z_t^*, x 
 
 ![Figure 5](figures/continuous.png)
 
-## 🔖 3. Pipeline
+## 📑 3. Pipeline
 
 Latent Code와 LIIF 함수의 의미를 살펴봤습니다. 주어진 데이터에 대해서 해당 모델을 학습시키기 위해서 저자는 **Self-Supervised Learning** 방법을 제안하였습니다. 이는 Continuous 한 성질을 학습시키는 것으로 이 두 단계를 거칩니다.
 
@@ -132,7 +132,7 @@ Data Preparation에서는 Down-sampling된 이미자와 예측할 pixel위치와
 {% endtab %}
 {% endtabs %}
 
-## 4. Additional Engineering
+## 📑 4. Additional Engineering
 
 LIIF 방법에 추가적인 방법들을 통해서 성능을 올릴 수 있습니다. 여기서는 총 3개의 방법이 제안되며, 셋다 사용했을 때, 가장 좋은 성능을 보입니다.
 
@@ -165,7 +165,7 @@ $$c = [c_h, c_w]$$
 
 기존 Pixcel값에 Cell 크기를 추가적으로 붙여서 입력으로 넣어줍니다.
 
-## 5. Experiments
+## 📑 5. Experiments
 
 ### High Resolution benchmark
 
@@ -175,17 +175,16 @@ $$c = [c_h, c_w]$$
 
 ![Figure 11](figures/exp2.png)
 
-## 6. Conclusion
+## 📑 6. Conclusion
 
 이 논문에서는 연속적인 이미지 표현을 위한 Local Implicit Image Function을 제안하였습니다. 이 모델의 장점은 Image별로 Latent code를 학습하는 것이 아니라, Latent Code는 다른 Encoder로부터 주어지며, Latent code의 위치를 기반으로 특정 위치까지 떨어진 점 (Continuous)의 RGB 값을 유추하는데 있습니다.
 
 이러한 방식은 Latent Code를 생성해주는 Encoder의 성능에 영향을 받는다는 한 가지 단점이 있지만, NIR을 위치기반에서 \[Latent, 위치] 기반으로 확장한 장점이 있습니다.
 
-## Related Articles
+## Related Sites
 
-\[논문에서 사용된 두 가지 Encoder]
+* [LIIF official Github](https://github.com/yinboc/liif)
 
-* [EDSR](artical\_10.md)
-* [RDN](artical\_10.md)
+* [Enhanced Deep Residual Networks for Single Image Super-Resolution (EDSR)](https://arxiv.org/abs/1707.02921)
+* [Residual Dense Network (RDN)](https://github.com/yulunzhang/RDN)
 
-## References

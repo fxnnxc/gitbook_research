@@ -1,6 +1,6 @@
 # Learning Continuous Image Representation with Local Implicit Image Function
 
-## 🔖 1. Introduction
+## 📑 1. Introduction
 
 ### Image as a Function
 
@@ -25,7 +25,7 @@ Image Representation에 대한 기초는 이미지를 함수로 나타내는데�
 * Discrete Image를 Continuous 한 이미지 표현으로 학습시키는 표현하는 방법
 * Continuous Representation을 통해 더 높은 Resolution을 만드는 방법
 
-## 🔖 2. Local Implicit Image Function (LIIF)
+## 📑 2. Local Implicit Image Function (LIIF)
 
 ### Definition
 
@@ -94,7 +94,7 @@ $$I(x) = \sum_{t \in \{ 00, 01,10,11 \}} \frac{S_t}{S} \cdot f_\theta (z_t^*, x 
 
 ![Figure 5](figures/continuous.png)
 
-## 🔖 3. Pipeline
+## 📑 3. Pipeline
 
 위에서 **Latent Code**와 **LIIF 함수**의 의미를 살펴봤습니다. 주어진 데이터에 대해서 해당 모델을 학습시키기 위해서 저자는 **Self-Supervised Learning** 방법을 제안하였습니다. 데이터와 학습 방법에 대해서 알아보겠습니다.
 
@@ -131,7 +131,7 @@ Data Preparation에서는 **Down-sampling된 이미지**(이미지의 픽셀 수
 {% endtab %}
 {% endtabs %}
 
-## 4. Additional Engineering
+## 📑 4. Additional Engineering
 
 LIIF 방법에 추가적인 방법들을 통해서 성능을 올릴 수 있습니다. 여기서는 총 3개의 방법이 제안되며, 셋다 사용했을 때, 가장 좋은 성능을 보입니다.
 
@@ -166,7 +166,7 @@ $$c = [c_h, c_w]$$
 {% endtab %}
 {% endtabs %}
 
-## 5. Experiments
+## 📑 5. Experiments
 
 ### High Resolution Benchmark
 
@@ -185,13 +185,14 @@ Figure 10은 High Resolution Benchmark인 DIV2K 데이터셋에 대해서 성능
 
 ![Figure 11](figures/exp2.png)
 
-## 6. Conclusion
+## 📑 6. Conclusion
 
 이 논문에서는 연속적인 이미지 표현을 위한 **Local Implicit Image Function**($$f(z, x-v)$$)을 제안하였습니다. Latent code의 위치에서 특정 위치까지 떨어진 점의 RGB 값을 유추함으로써 continuous image representation을 가능하게 만들었습니다. 또한 이미지 개별이 아닌, 이미지를 pre-trained encoder를 사용하여 이미지에 대한 feature vector를 latent code의 기반으로 사용함으로써, 다양한 이미지에 대해 적용가능한 Training 기법을 제안하였습니다.
 
-## Related Articles
+## 📰 Related Sites
 
-\[논문에서 사용된 두 가지 Encoder]
+* [LIIF official Github](https://github.com/yinboc/liif)
 
-* [EDSR](artical\_10-1.md)
-* [RDN](artical\_10-1.md)
+* [Enhanced Deep Residual Networks for Single Image Super-Resolution (EDSR)](https://arxiv.org/abs/1707.02921)
+* [Residual Dense Network (RDN)](https://github.com/yulunzhang/RDN)
+
