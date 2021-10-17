@@ -1,4 +1,4 @@
-# Learning Continuous Image Representation with Local Implicit Image Function
+# Paper Review : Learning Continuous Image Representation with Local Implicit Image Function 
 
 ## 📑 1. Introduction
 
