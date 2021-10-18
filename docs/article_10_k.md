@@ -29,7 +29,7 @@ Image Representation에 대한 기초는 이미지를 함수로 나타내는데�
 
 ### Definition
 
-픽셀 $$x$$ 에 대해서 RGB 값을 유추하는 함수는 $$s = f_\theta (x)$$ 로 나타낼 수 있습니다. 모델은 픽셀 위치 정보를 기반으로 RGB값(혹은 Grey scale)을 유추합니다. **제안한 모델인 Local Implicit Image Function (LIIF)**는 Latent Code를 이용하여 Image 에 대한 정보 $$M \in \mathbb{R}^{H\times W \times D}$$ 가 있을 때, 이를 Continuous image $$I$$ 로 학습시키는 것을 목적으로 합니다. **위치 정보 **$$x$$** 뿐만 아니라, Latent Code에도 의존시킨** LIIF의 모델은 다음과 같습니다.
+픽셀 $$x$$ 에 대해서 RGB 값을 유추하는 함수는 $$s = f_\theta (x)$$ 로 나타낼 수 있습니다. 모델은 픽셀 위치 정보를 기반으로 RGB값(혹은 Grey scale)을 유추합니다. **제안한 모델인 Local Implicit Image Function(LIIF)** 는 Latent Code를 이용하여 Image 에 대한 정보 $$M \in \mathbb{R}^{H\times W \times D}$$ 가 있을 때, 이를 Continuous image $$I$$ 로 학습시키는 것을 목적으로 합니다. **위치 정보 **$$x$$** 뿐만 아니라, Latent Code에도 의존시킨** LIIF의 모델은 다음과 같습니다.
 
 {% tabs %}
 {% tab title="💡 LIFF" %}
