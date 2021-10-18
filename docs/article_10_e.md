@@ -4,12 +4,14 @@
 
 ### Image as a Function
 
-Image Representation에 대한 기초는 이미지를 함수로 나타내는데서 시작합니다. 함수는 입력을 넣으면 무언가 값을 반환해주는 거죠. $$X$$에 따라서 $$Y$$의 값이 바뀌는데, **Figure 1**의 다항함수, 지수함수, 삼각함수처럼 쉬울 수도 있고, 아니면 **Figure 2** 처럼 무지 복잡할 수도 있습니다.
+
+We usually consider image as pixel-RGB pairs. However, there is another view point, **image as a function.** Function is a mapping which takes input and outputs something. $$Y$$ value changes according to $$X$$. There are many easy functions like **Figure 1** such as polynomial, exponential or the function may be very complex like **Figure 2**.
+
 
 |           Figure 1          |                                  Figure 2                                 |
 | :-------------------------: | :-----------------------------------------------------------------------: |
 |  ![](figures/function1.png) |                         ![](figures/function2.png)                        |
-| 단순한 형태의 함수는 \\ 함수식을 유추하기 쉽습니다. | 이미지처럼 각 픽섹 위치에 대해서 RGB값이 다양한 경우, 위치가 주어졌을 때, R,G,B를 맵핑하는 함수를 찾는 것은 어려습니다. |
+| 단순한 형태의 함수는 \n 함수식을 유추하기 쉽습니다. | 이미지처럼 각 픽섹 위치에 대해서 RGB값이 다양한 경우, 위치가 주어졌을 때, R,G,B를 맵핑하는 함수를 찾는 것은 어려습니다. |
 
 **Image -> Function :** 이미지는 픽셀 $$(x,y)$$ 좌표에 대해서 RGB 값을 반환하는 함수로 생각할 수 있습니다. **Figure 2** 처럼 이미지 함수는 한눈에 봐도 굉장히 복잡하고, 여기에 맞는 다항함수나 $$Sine, Cosise$$ 함수를 찾는 것은 불가능에 가깝습니다. 그러므로 이미지의 값을 대응시키는 함수를 찾는 것은 결코 쉬운 게 아니고, 이를 인공신경망으로 학습하려는 시도가 있었습니다. 이 분야를 **Neural Implicit Represenation (NIR)** 이라고 합니다.
 
