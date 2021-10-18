@@ -1,4 +1,8 @@
-# Paper Review : Learning Continuous Image Representation with Local Implicit Image Function 
+---
+description: Paper review / Article 10 / KOR
+---
+
+# Learning Continuous Image Representation with Local Implicit Image Function 
 
 ## 📑 1. Introduction
 
@@ -8,7 +12,7 @@ Image Representation에 대한 기초는 이미지를 함수로 나타내는데�
 
 |           Figure 1          |                                  Figure 2                                 |
 | :-------------------------: | :-----------------------------------------------------------------------: |
-|  ![](figures/function1.png) |                         ![](figures/function2.png)                        |
+|  ![](../../.gitbook/assets/10/function1.png) |                         ![](../../.gitbook/assets/10/function2.png)                        |
 | 단순한 형태의 함수는 함수식을 유추하기 쉽습니다. | 이미지처럼 각 픽섹 위치에 대해서 RGB값이 다양한 경우, 위치가 주어졌을 때, R,G,B를 맵핑하는 함수를 찾는 것은 어려습니다. |
 
 **Image -> Function :** 이미지는 픽셀 $$(x,y)$$ 좌표에 대해서 RGB 값을 반환하는 함수로 생각할 수 있습니다. **Figure 2** 처럼 이미지 함수는 한눈에 봐도 굉장히 복잡하고, 여기에 맞는 다항함수나 $$Sine, Cosise$$ 함수를 찾는 것은 불가능에 가깝습니다. 그러므로 이미지의 값을 대응시키는 함수를 찾는 것은 결코 쉬운 게 아니고, 이를 인공신경망으로 학습하려는 시도가 있었습니다. 이 분야를 **Neural Implicit Represenation (NIR)** 이라고 합니다.
@@ -51,7 +55,7 @@ Latent Code는 $$[0,H]\times [0,W]$$ 이미지가 있을 때, $$H \times W$$ 개
 
 |                            Figure 3                           |                                  Figure 4                                  |
 | :-----------------------------------------------------------: | :------------------------------------------------------------------------: |
-|                     ![](figures/dog1.png)                     |                            ![](figures/dog2.png)                           |
+|                     ![](../../.gitbook/assets/10/dog1.png)                     |                            ![](../../.gitbook/assets/10/dog2.png)                           |
 | 전체 4x4 Pixel이 있을 때, Latent Code는 4x4 개가 각 위치별로 고르게 분포되어 있습니다. | continuous 한 위치 $$x$$ 에 대해서 $$z^*$$ 는 $$x$$ 에서 가까운 4개의 Latent Code로 정해집니다. |
 
 {% hint style="info" %}
@@ -92,7 +96,7 @@ $$I(x) = \sum_{t \in \{ 00, 01,10,11 \}} \frac{S_t}{S} \cdot f_\theta (z_t^*, x 
 
 입력으로 Latent Code와의 거리 차이가 주어지기 때문에, continuous 한 거리 차이를 입력으로 넣게 된다면, 이미지에 대한 **continuous representation** 을 얻게 됩니다. Figure 5 에서 나타나듯이, 연속적인 $$x$$들을 다양하게 선택할 수 있고, continous한 상대위치 $$x - v_t^*$$ 값이 계산됩니다.
 
-![Figure 5](figures/continuous.png)
+![Figure 5](../../.gitbook/assets/10/continuous.png)
 
 ## 📑 3. Pipeline
 
@@ -105,7 +109,7 @@ $$I(x) = \sum_{t \in \{ 00, 01,10,11 \}} \frac{S_t}{S} \cdot f_\theta (z_t^*, x 
 
 Data Preparation에서는 **Down-sampling된 이미지**(이미지의 픽셀 수 감소)와 예측할 pixel 위치 $$x_{hr}$$ 와 RGB 값 $$s_{hr}$$ 을 준비합니다. **Figure 6** 에 나타나있듯이, 주어진 이미지를 Down-sampling하여 크기를 줄이고 이 정보로부터 사이즈가 큰 원래 이미지의 픽셀에 대한 RGB를 예측합니다. 즉, Higer resolution을 타겟팅하여 학습하고자 합니다. 픽셀에 대한 내용은 밑에서 조금 더 자세히 설명하겠습니다.
 
-![Figure 6](figures/data_preparation.png)
+![Figure 6](../../.gitbook/assets/10/data_preparation.png)
 
 ### Training
 
@@ -116,7 +120,7 @@ Data Preparation에서는 **Down-sampling된 이미지**(이미지의 픽셀 수
 🚨\*\* \*\*인코더의 역할은 이미지 개별에 대한 Latent Code를 뽑아내는 것 입니다. 따라서 다양한 이미지 샘플에 대한 학습이 가능합니다. 기존에 NIR이 이미지 하나에 대해서 Fitting 하는 것과 차이가 있습니다.
 {% endhint %}
 
-![Figure 7](figures/training.png)
+![Figure 7](../../.gitbook/assets/10/training.png)
 
 {% tabs %}
 {% tab title="💡 Question" %}
@@ -155,7 +159,7 @@ $$\hat{M}_{jk} = Concat(\{ M_{j+l, k+m} \}_{l,m \in \{-1,0,1\}})$$
 
 |                                Figure 8                                |                       Figure 9                      |
 | :--------------------------------------------------------------------: | :-------------------------------------------------: |
-|                         ![](figures/local1.png)                        |               ![](figures/local2.png)               |
+|                         ![](../../.gitbook/assets/10/local1.png)                        |               ![](../../.gitbook/assets/10/local2.png)               |
 | 만일 가장 가까운 Latent Code 하나만 고른다면, 범위를 넘어가면서 Latent Code가 급변하는 현상이 나타납니다. | 사분면에 대해서 가까운 4개를 고른다면 선택에 대한 범위를 넘어갈 때 절반만 바뀌게 됩니다. |
 
 ### Cell Decoding
@@ -184,14 +188,14 @@ $$s = f_{cell} (z, [x,c])$$
 
 **💡 결과적으로 LIIF 모델은 더 높은 resolution을 요구하는 경우, 다른 모델에 비해서 월등한 성능을 보인다는 것을 확인할 수 있습니다.**
 
-![Figure 10](figures/exp1.png)
+![Figure 10](../../.gitbook/assets/10/exp1.png)
 
 ### Continuous Representation
 
 Continuous Representation을 잘 학습했다면 **이미지를 확대했을 때도 끊기지 않고 제대로 보여야 합니다.** 
 다른 NIR이나 High resolution 모델들과 비교했을 때, LIIF의 이미지는 더욱 연속적인 형태로 나타나게 됩니다. 다른 모델들이 약간의 끊기는 현상이나, Blur 효과가 있는 반면, LIIF 모델은 생성된 이미지가 굉장히 부드러운 것을 확인할 수 있습니다.
 
-![Figure 11](figures/exp2.png)
+![Figure 11](../../.gitbook/assets/10/exp2.png)
 
 ## 📑 6. Conclusion
 
