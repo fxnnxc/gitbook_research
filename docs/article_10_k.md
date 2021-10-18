@@ -126,6 +126,9 @@ Data Preparation에서는 **Down-sampling된 이미지**(이미지의 픽셀 수
 {% endtab %}
 
 {% tab title="Answer" %}
+
+🧐 input의 크기는 48x48 인데, 224x224 를 얻는 방법은 무엇일까?
+
 이미지의 size가 48x48 이나 224x224로 Resolution이 다를지라도, 두 이미지는 동일한 이미지를 나타내고 있습니다. 따라서 두 이미지를 모두 \[0,1]x\[0,1] 로 normalize 한다면, 픽셀 크기에 상관없는 이미지를 얻을 수 있습니다.
 
 그래서 Data Preparation 단계에서는 Ground Truth 이미지로부터 샘플된 위치가 \[0,224]의 범위가 아닌 \[0,1] 범위입니다.
