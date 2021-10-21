@@ -2,9 +2,16 @@
 description: Paper review / Article 10 / KOR
 ---
 
-# Learning Continuous Image Representation with Local Implicit Image Function 
+# Learning Continuous Image Representation with Local Implicit Image Function [Kor]
 
-## 📑 1. Introduction
+## Title & Description
+
+* Learning Continuous Image Representation with Local Implicit Image Function [Kor]
+* Yinbo Chen / Learning Continuous Image Representation with Local Implicit Image Function / CVPR 2021
+
+[English version](cvpr-2021-liif-eng.md) of this article is available.
+
+## 📑 1. Problem Definition
 
 ### Image as a Function
 
@@ -203,7 +210,18 @@ Continuous Representation을 잘 학습했다면 **이미지를 확대했을 때
 
 이미지는 픽셀 위치에 대해서 RGB 값을 가지기 떄문에, 너무 큰 이미지는 데이터의 용량에 대한 이슈로 저장하기 어려운 점이 있습니다. 만일 NIR이 더욱 발달하여, 훨씬 적은 모델로 이미지를 외울 수 있는 모델이 있다면, 데이터 전송 시, 이미지를 보내는 것이 아니라, Neural Network를 보내는 것도 향후에는 가능할 것 같습니다. 
 
-## 📰 Related Sites
+## 📑 Author / Reviewer information
+
+### Author 
+
+
+
+### Reviewer 
+
+1. 박범진 (Bumjin Park): KAIST / bumjin@kaist.ac.kr 
+
+
+## 📰 References & Additional materials
 
 * [LIIF official Github](https://github.com/yinboc/liif)
 

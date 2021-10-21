@@ -6,8 +6,8 @@
 
 * [\[2021 Fall\] Paper review](paper-review/2021-fall-paper-review/README.md)
   * [\(Template\) Title \[Language\]](paper-review/2021-fall-paper-review/template-paper-review.md)
-  * [Learning Continuous Image Representation with Local Implicit Image Function \[kor\]](paper-review\2021-fall-paper-review\cvpr-2021-liif-kor.md)
-  * [Learning Continuous Image Representation with Local Implicit Image Function \[eng\]](paper-review\2021-fall-paper-review\cvpr-2021-liif-eng.md)
+  * [Local Implicit Image Function \[Kor\]](paper-review\2021-fall-paper-review\cvpr-2021-liif-kor.md)
+  * [Local Implicit Image Function \[Eng\]](paper-review\2021-fall-paper-review\cvpr-2021-liif-eng.md)
 
 ## Author's note
 
