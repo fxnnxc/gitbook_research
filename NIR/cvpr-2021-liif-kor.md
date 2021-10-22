@@ -199,6 +199,16 @@ Continuous Representation을 잘 학습했다면 **이미지를 확대했을 때
 
 이미지는 픽셀 위치에 대해서 RGB 값을 가지기 떄문에, 너무 큰 이미지는 데이터의 용량에 대한 이슈로 저장하기 어려운 점이 있습니다. 만일 NIR이 더욱 발달하여, 훨씬 적은 모델로 이미지를 외울 수 있는 모델이 있다면, 데이터 전송 시, 이미지를 보내는 것이 아니라, Neural Network를 보내는 것도 향후에는 가능할 것 같습니다. 
 
+## 📑 Author / Reviewer information
+
+### Author 
+
+1. 박범진 (Bumjin Park): KAIST / bumjin@kaist.ac.kr 
+
+
+### Reviewer 
+
+
 ## 📰 Related Sites
 
 * [LIIF official Github](https://github.com/yinboc/liif)
