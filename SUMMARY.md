@@ -1,6 +1,4 @@
 # Table of contents
 
-* [Bumjin's research](README.md)
-* [📚 Nueral Implicit Representation](NIR/README.md)
-  * [KR:Learning Continuous Image Representation with Local Implicit Image Function](NIR/cvpr-2021-liif-kor.md)
-  * [EN:Learning Continuous Image Representation with Local Implicit Image Function](NIR/cvpr-2021-liif-eng.md)
+* [Bumjin's Study](README.md)
+  * [Information Theory](study/information_theory/source_coding_theorem.md)
