@@ -2,14 +2,13 @@
 
 In this page, we'll study the channel coding theorem.
 
-> **Thm. (Channel Coding Theorem)** The minimum achievable rate is $$C= \max_{P_X} I(P_X , W)$$. To be precise, if $$R< C$$, then $$R$$ is achievable, and if $$R>C$$, then it is not achievable.
+> **Thm. (Channel Coding Theorem)** The maximum achievable rate $$R$$ is $$C= \max_{P_X} I(P_X , W)$$. To be precise, if $$R< C$$, then $$R$$ is achievable, and if $$R>C$$, then it is not achievable.
 
 ### What is given?
 
 {% tabs %}
 {% tab title="Given!" %}
 * The fixed length of n
-* The fixed rate R
 * The channel W = p\_{Y|X}
 * The channel capacity C = max_{p|X} I(P_\_X, W)&#x20;
 {% endtab %}
@@ -62,6 +61,24 @@ Therefore we have,
 $$
 P_n^{(n)} \ge 1- \frac{C}{R} - \frac{1}{nR}
 $$
+
+When $$R<C$$, the right hand side is bounded away from 0** (good)**
+
+When $$R>C$$, the right hand is is always positive, and the error never goes to $$0$$.&#x20;
+
+{% tabs %}
+{% tab title="H(M)" %}
+The entropy of the message is the uncertainty among  $$2^{nR}$$ codes.&#x20;
+
+Because it is uniformly distributed, we have&#x20;
+
+$$H(M) = -\sum \frac{1}{2^{nR}} \log \frac{1}{2^{nR}} =  \log{2^{nR}} = nR$$&#x20;
+{% endtab %}
+
+{% tab title="Second Tab" %}
+
+{% endtab %}
+{% endtabs %}
 
 ### :white\_check\_mark: Meaning of the Channel Coding Theorem
 
