@@ -1,8 +1,8 @@
 # Table of contents
 
-
-* [Information Theory](study/information_theory/README.md)
-  * [Source Coding Theorem](study/information_theory/source_coding_theorem.md)
-  * [Channel Coding Theorem](study/information_theory/channel_coding_theorem.md)
-* [Convex Optimization](study/convex_optimization/README.md)
-  * [Local Stochastic Gradient Descent](study/convex_optimization/local_stochastic_gradient_descent.md) 
+* [😃 STUDY](README.md)
+* [Information Theory](study/information\_theory/README.md)
+  * [Source Coding Theorem](study/information\_theory/source\_coding\_theorem.md)
+  * [Channel Coding Theorem](study/information\_theory/channel\_coding\_theorem.md)
+* [Convex Optimization](study/convex\_optimization/README.md)
+  * [Local Stochastic Gradient Descent](study/convex\_optimization/local\_stochastic\_gradient\_descent.md)
