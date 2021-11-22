@@ -1,8 +1,41 @@
 # Channel Coding Theorem
 
-The minimum achievable rate is $$C= \max_{P_X} I(P_X , W)$$. To be precise, if $$R< C$$, then $$R$$ is achievable, and if $$R>C$$, then it is not achievable.
+In this page, we'll study the channel coding theorem.
 
-### What is the meaning of achievable?
+> **Thm. (Channel Coding Theorem)** The minimum achievable rate is $$C= \max_{P_X} I(P_X , W)$$. To be precise, if $$R< C$$, then $$R$$ is achievable, and if $$R>C$$, then it is not achievable.
+
+### What is given?
+
+{% tabs %}
+{% tab title="Given!" %}
+* The fixed length of n
+* The fixed rate R
+* The channel W = p\_{Y|X}
+* The channel capacity C = max_{p|X} I(P_\_X, W)&#x20;
+{% endtab %}
+{% endtabs %}
+
+#### Background&#x20;
+
+* What is (n, R) codes
+* Fanno's inequality
+* Data processing inequality&#x20;
+
+{% tabs %}
+{% tab title="(n, R) codes" %}
+
+{% endtab %}
+
+{% tab title="Fanno's inequality" %}
+
+{% endtab %}
+
+{% tab title="Data Processing inequality" %}
+
+{% endtab %}
+{% endtabs %}
+
+### :pen\_fountain: What is the meaning of achievable?
 
 $$R$$ is achievable means that the error probability goes to zero with the rate $$R$$.
 
@@ -29,3 +62,8 @@ Therefore we have,
 $$
 P_n^{(n)} \ge 1- \frac{C}{R} - \frac{1}{nR}
 $$
+
+### :white\_check\_mark: Meaning of the Channel Coding Theorem
+
+
+
