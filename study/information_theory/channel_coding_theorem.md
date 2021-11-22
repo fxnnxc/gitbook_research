@@ -52,6 +52,10 @@ We say a rate $$R$$ is achievable if there exists, a sequence of $$(n, R)$$ code
 
 Therefore with _achievable rate_, we can construct $$(n, R)$$ codes such that the maximum error goes to zero as $$n$$ goes to the infinity.
 
+![Even though rate R achieves zero probability of the error, the decreasing speed differs for different R. Note that rates R1, R2, and R3 are achievable and rate R4 is not achievable](../../.gitbook/assets/슬라이드3.PNG)
+
+#### \[Proof] When R > C,  there is no (n,R) code such that $$P_{e, \text{max}}^{(n)} \rightarrow 0$$
+
 $$
 \begin{aligned} nR = H(M) &= H(M|Y^n) + I(M;Y^n)\\ &= H(M|Y^n) + I(X^n(M); Y^n) ~~ \text{data processing inequality}\\ &= \log{2} + P_e^{(n)} nR + I(X^n(M);Y^n) ~~ \text{Fano's inequality}\\ &= \log{2} + P_e^{(n)}nR + nC ~~\text{By the definition of } C \end{aligned}
 $$
@@ -82,5 +86,12 @@ $$H(M) = -\sum \frac{1}{2^{nR}} \log \frac{1}{2^{nR}} =  \log{2^{nR}} = nR$$&#x2
 
 ### :white\_check\_mark: Meaning of the Channel Coding Theorem
 
+![](../../.gitbook/assets/슬라이드4.PNG)
 
+
+
+**You can contact me via**
+
+* bumjin@kaist.ac.kr&#x20;
+* [https://open.kakao.com/me/fxnnxc](https://open.kakao.com/me/fxnnxc)
 
