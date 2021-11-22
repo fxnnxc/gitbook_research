@@ -1,5 +1,11 @@
 # Channel Coding Theorem
 
+:warning: I'm current editing the post&#x20;
+
+\----
+
+\----
+
 In this page, we'll study the channel coding theorem.
 
 > **Thm. (Channel Coding Theorem)** The maximum achievable rate $$R$$ is $$C= \max_{P_X} I(P_X , W)$$. To be precise, if $$R< C$$, then $$R$$ is achievable, and if $$R>C$$, then it is not achievable.
@@ -8,21 +14,17 @@ In this page, we'll study the channel coding theorem.
 
 {% tabs %}
 {% tab title="Given!" %}
-* The fixed length of n
-* The channel W = p\_{Y|X}
-* The channel capacity C = max_{p|X} I(P_\_X, W)&#x20;
+* The fixed length of $$n$$
+* The channel $$W = P_{Y|X}$$​
+* The channel capacity $$C = \max_{p_X} I(P_X, W)$$​
 {% endtab %}
 {% endtabs %}
 
-#### Background&#x20;
-
-* What is (n, R) codes
-* Fanno's inequality
-* Data processing inequality&#x20;
+#### Background
 
 {% tabs %}
 {% tab title="(n, R) codes" %}
-
+![(n, R) codes ](../../.gitbook/assets/codes.png)
 {% endtab %}
 
 {% tab title="Fanno's inequality" %}
