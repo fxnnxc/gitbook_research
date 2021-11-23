@@ -13,15 +13,17 @@ $$
 The channel encoder $$f_c^{(M)}$$ is a mapping
 
 $$
-f_c^{(M)} : \{1,2,\cdots,M \} \rightarrow \mathcal{X}
+f_c^{(n)} : \{1,2,\cdots, 2^{nR} \} \rightarrow \mathcal{X}^n
 $$
+
+* **it outputs **$$m$$-th codeword: $$x^n(m) \in \mathcal{X}^n$$
 
 ## Channel Decoder
 
 The channel decoder \$$g\_c^{(M)} is a mapping
 
 $$
-f_c^{(M)} : \mathcal{Y} \rightarrow \{1,2,\cdots,M \}
+f_c^{(n)} : \mathcal{Y}^n \rightarrow \{1,2,\cdots,2^{nR} \}
 $$
 
 ​
