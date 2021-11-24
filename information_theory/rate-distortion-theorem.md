@@ -42,10 +42,6 @@ Here $$g_n(m) = \hat{X}^n(m)$$ is a codeword and $$f_n^{-1}(m)$$ is the **associ
 
 
 
-{% hint style="info" %}
-
-{% endhint %}
-
 
 
 {% hint style="info" %}
@@ -61,13 +57,29 @@ A rate distortion pair $$(R,D)$$ is achievable if and only if there exists a seq
 {% hint style="info" %}
 **Theorem (Rate Distortion Theorem)**
 
-For a given $$DMS(P_X)$$ and a distortion function $$d$$,
+For a given $$DMS(P_X)$$ and a distortion function $$d$$, $$R(D) = R^{(I)} (D)$$
 
-$$R(D) = \min_{\{P_{Y|X}: \mathbb{E}_{P_{XY}}[d(X,Y)] \le D\}} I(P_X, P_{Y|X})$$
+That is, ​ $$\inf\{R:(R,D) \text{~is achievable}\}= \min_{\{P_{Y|X}: \mathbb{E}_{P_{XY}}[d(X,Y)] \le D\}} I(P_X, P_{Y|X})$$**​**
 
 * **\[**:ballot\_box\_with\_check:**] :** $$\lim_{n\rightarrow \infty} \mathbb{E}[d^{(n)} [(X^n, Y^n) ] \le D$$​&#x20;
-* Sufficient -> $$\exists (n,R)$$ codes $$R > R(D)$$ -> satisfy **\[**:ballot\_box\_with\_check:**]**
-* Necessary -> $$R < R(D)$$ -> never satisfy **\[**:ballot\_box\_with\_check:**]**
+* Sufficient -> $$\exists (n,R)$$ codes $$R > R^{(I)}(D)$$ -> satisfy **\[**:ballot\_box\_with\_check:**]**
+*   Necessary -> $$R < R^{(I)}(D)$$ -> never satisfy **\[**:ballot\_box\_with\_check:**]**
+
+    ****
+
+    **-----**
+*   **Achievability: **
+
+    $$R> I(P_X, P_{Y|X})$$-> the error goes to zero
+*   **Converse**
+
+    When distortion $$E[d(X^n, \hat X^n)] \ge D$$​, $$R\ge R(D)$$
+
+    This means, the ratio exceeds the $$R(D)$$
+{% endhint %}
+
+{% hint style="info" %}
+
 {% endhint %}
 
 
