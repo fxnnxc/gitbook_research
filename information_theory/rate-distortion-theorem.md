@@ -50,14 +50,16 @@ Here $$g_n(m) = \hat{X}^n(m)$$ is a codeword and $$f_n^{-1}(m)$$ is the **associ
 A rate distortion pair $$(R,D)$$ is achievable if and only if there exists a sequence of $$(2^{nR}, n)$$-rate distortion codes $$(f_n, g_n)$$such that$$\lim_{n\rightarrow \infty} \mathbb{E}[d^{(n)} (X^n, g_n(f_n(X^n)))] \le D$$​
 
 * **The rate distortion region for a source** : the closure of the set of achievable rate distortion region of the source for a given distortion $$D$$.
-* **The rate distortion function** $$R(D) = \inf\{R:(R,D) \text{~is achievable}\}$$​
-* **​The distortion rate function  **$$D(R)= \inf\{D: (R,D) \text{ is achievable}\}$$​
+*   **The rate distortion function** $$R(D) = \inf\{R:(R,D) \text{~is achievable}\}$$ **for a given **$$D$$
+
+    :star:(주어진 D를 만족하는 최소한의 rate R)​
+* **​The distortion rate function  **$$D(R)= \inf\{D: (R,D) \text{ is achievable}\}$$for a given $$R$$​
 {% endhint %}
 
 {% hint style="info" %}
 **Theorem (Rate Distortion Theorem)**
 
-For a given $$DMS(P_X)$$ and a distortion function $$d$$, $$R(D) = R^{(I)} (D)$$
+For a given $$DMS(P_X)$$ and a distortion function $$d$$, and fixed $$D$$, $$R(D) = R^{(I)} (D)$$
 
 That is, ​ $$\inf\{R:(R,D) \text{~is achievable}\}= \min_{\{P_{Y|X}: \mathbb{E}_{P_{XY}}[d(X,Y)] \le D\}} I(P_X, P_{Y|X})$$**​**
 
@@ -70,10 +72,18 @@ That is, ​ $$\inf\{R:(R,D) \text{~is achievable}\}= \min_{\{P_{Y|X}: \mathbb{E
     **-----**
 *   **Achievability: **
 
-    $$R> I(P_X, P_{Y|X})$$-> the error goes to zero
+    $$R> I(P_X, P_{Y|X})$$-> the error goes to zero (**(R,D)** is achievable)
 *   **Converse**
 
-    When distortion $$E[d(X^n, \hat X^n)] \ge D$$​, $$R\ge R(D)$$
+    :star::star:&#x20;
+
+    &#x20;$$R < R^{(I)}(D)$$ -> never satisfy  is equal to (satisfy -> $$R \ge R^{(I)}(D)$$)
+
+    :star::star:&#x20;
+
+    R < I(P\_x, P\_y|x) -> the error never goes to zero it is not achievable.&#x20;
+
+    When distortion $$E[d(X^n, \hat X^n)] \ge D$$, then always $$R\ge R(D)$$
 
     This means, the ratio exceeds the $$R(D)$$
 {% endhint %}
