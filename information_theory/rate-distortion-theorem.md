@@ -1,25 +1,61 @@
 # Rate Distortion Theorem
 
+When we want to represent continuous random variable with finite number of bits, we should design the mapping function so that the description achieves the minimum distortion. When have a continuous representation $$X$$ and want to describe it with finite $$\hat X$$.&#x20;
 
+![](../.gitbook/assets/continuous.png)
 
 {% hint style="info" %}
 **Definition (distortion function)**
 
-$$d : \mathcal{X} \times \mathcal{Y} \rightarrow \mathbb{R}$$ denote a distortion function. We define the corresponding distortion between two sequences $$x^n$$ and $$y^n$$ as&#x20;
-
-&#x20;$$d^{(n)}(x^n, y^n) = \frac{1}{n} \sum_{i=1}^n d(x_i, y_i)$$​
+$$d : \mathcal{X} \times \mathcal{\hat X} \rightarrow \mathbb{R}^+$$denotes a distortion function. We define the corresponding distortion between two sequences $$x^n$$ and $$\hat x^n$$ as  $$d^{(n)}(x^n, \hat x^n) = \frac{1}{n} \sum_{i=1}^n d(x_i, \hat x_i)$$​
 
 This is the empirical average of distortion between the two sequences.
 {% endhint %}
 
+#### example 1 (Hamming distortion)
+
+$$
+d(x, \hat x ) = \begin{cases}
+0 & \text{if } x = \hat x \\1 &\text{if } x \ne \hat x 
+\end{cases}
+$$
+
+It is also, the probability of error distortion, since $$\mathbb{E}[d(X,\hat X)] = Pr(X \ne \hat X)$$
+
+#### example 2 (Squared-error distortion)
+
+$$
+d(x, \hat x ) = (x- \hat x ) ^2
+$$
+
+​It is highly related to the mean squared error, but not a good metric for the human evaluation because most waveform includes small noise errors. (similar with image data)
+
+{% hint style="info" %}
+**Definition (The distortion associated **$$(2^{nR},n)$$**-rate distortion code)**
+
+$$D=\mathbb{E}(d(X^n, g_n(f_n(X^n)))$$​
+
+$$D=\sum_{x^n} p(x^n)(d(x^n, g_n(f_n(x^n)))$$​
+
+Here $$g_n(m) = \hat{X}^n(m)$$ is a codeword and $$f_n^{-1}(m)$$ is the **associated region**
+{% endhint %}
+
+
+
+{% hint style="info" %}
+
+{% endhint %}
+
+
+
 {% hint style="info" %}
 **Definition (achievable rate-distortion pair) **
 
-if and only if there exits a sequence of $$(n,R)$$ codes such that&#x20;
+A rate distortion pair $$(R,D)$$ is achievable if and only if there exists a sequence of $$(2^{nR}, n)$$-rate distortion codes $$(f_n, g_n)$$such that$$\lim_{n\rightarrow \infty} \mathbb{E}[d^{(n)} (X^n, g_n(f_n(X^n)))] \le D$$​
 
-$$\lim_{n\rightarrow \infty} \mathbb{E}[d^{(n)} (X^n, g_n(f_n(X^n)))] \le D$$​
-
-* $$R(D) = \min\{R:(R,D) \text{~is achievable}\}$$​
+* **The rate distortion region for a source** : the closure of the set of achievable rate distortion region of the source for a given distortion $$D$$.
+* **The rate distortion function** $$R(D) = \inf\{R:(R,D) \text{~is achievable}\}$$​
+* **​The distortion rate function  **$$D(R)= \inf\{D: (R,D) \text{ is achievable}\}$$​
 {% endhint %}
 
 {% hint style="info" %}
@@ -27,7 +63,7 @@ $$\lim_{n\rightarrow \infty} \mathbb{E}[d^{(n)} (X^n, g_n(f_n(X^n)))] \le D$$​
 
 For a given $$DMS(P_X)$$ and a distortion function $$d$$,
 
-$$R(D) = \min_{\{P_{Y|X}: \mathbb{E}{P{Y|X}}[d(X,Y)] \le D\}} I(P_X, P_{Y|X})$$&#x20;
+$$R(D) = \min_{\{P_{Y|X}: \mathbb{E}_{P_{XY}}[d(X,Y)] \le D\}} I(P_X, P_{Y|X})$$
 
 * **\[**:ballot\_box\_with\_check:**] :** $$\lim_{n\rightarrow \infty} \mathbb{E}[d^{(n)} [(X^n, Y^n) ] \le D$$​&#x20;
 * Sufficient -> $$\exists (n,R)$$ codes $$R > R(D)$$ -> satisfy **\[**:ballot\_box\_with\_check:**]**
