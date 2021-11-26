@@ -1,4 +1,4 @@
-# ✅ Greedy Algorithm \[Proof]
+# \[2.2.1] Greedy Algorithm \[Proof]
 
 ## Submodular Function
 

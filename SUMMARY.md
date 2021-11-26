@@ -1,16 +1,14 @@
 # Table of contents
 
-* [😃 STUDY](README.md)
-* [Information Theory](information\_theory/README.md)
-  * [Source Coding Theorem](information\_theory/source\_coding\_theorem.md)
-  * [Channel Coding](information\_theory/channel\_coding/README.md)
-    * [Channel Capacity](information\_theory/channel\_coding/channel-capacity.md)
-    * [✅ Channel Coding Theorem](information\_theory/channel\_coding/channel\_coding\_theorem.md)
-    * [Source and Channel Separation Theorem](information\_theory/channel\_coding/source-and-channel-separation-theorem.md)
-  * [Rate Distortion Theorem](information\_theory/rate-distortion-theorem.md)
-* [Convex Optimization](convex\_optimization/README.md)
-  * [Local Stochastic Gradient Descent](convex\_optimization/local\_stochastic\_gradient\_descent.md)
-  * [Submodular](convex\_optimization/submodular/README.md)
-    * [✅ Greedy Algorithm \[Proof\]](convex\_optimization/submodular/greedy-algorithm.md)
-
-## Group 1
+* [😃 About me](README.md)
+* [\[1\] Information Theory](information\_theory/README.md)
+  * [\[1.1\] Source Coding Theorem](information\_theory/source\_coding\_theorem.md)
+  * [\[1.2\] Channel Coding](information\_theory/channel\_coding/README.md)
+    * [\[1.2.1\] Channel Capacity](information\_theory/channel\_coding/channel-capacity.md)
+    * [\[1.2.2\] Channel Coding Theorem](information\_theory/channel\_coding/channel\_coding\_theorem.md)
+    * [\[1.2.3\] Source and Channel Separation Theorem](information\_theory/channel\_coding/source-and-channel-separation-theorem.md)
+  * [\[1.3\] Rate Distortion Theorem](information\_theory/rate-distortion-theorem.md)
+* [\[2\] Convex Optimization](convex\_optimization/README.md)
+  * [\[2.1\] Local Stochastic Gradient Descent](convex\_optimization/local\_stochastic\_gradient\_descent.md)
+  * [\[2.2\] Submodular](convex\_optimization/submodular/README.md)
+    * [\[2.2.1\] Greedy Algorithm \[Proof\]](convex\_optimization/submodular/greedy-algorithm.md)
