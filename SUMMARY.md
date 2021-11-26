@@ -10,7 +10,7 @@
   * [Rate Distortion Theorem](information\_theory/rate-distortion-theorem.md)
 * [Convex Optimization](convex\_optimization/README.md)
   * [Local Stochastic Gradient Descent](convex\_optimization/local\_stochastic\_gradient\_descent.md)
+  * [Submodular](convex\_optimization/submodular/README.md)
+    * [Greedy Algorithm](convex\_optimization/submodular/greedy-algorithm.md)
 
 ## Group 1
-
-* [Page 1](group-1/page-1.md)
