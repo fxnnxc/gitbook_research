@@ -105,8 +105,8 @@ f(A^*) - f(A_{k}) &\le (1- \frac{1}{k}) (f(A^*) - f(A_{k-1})) \\
 e^{-x}) \end{aligned}
 $$
 
-\
-$$f(A_{k}) \ge \Big( 1 - \frac{1}{e} \Big) f(A^*)$$​.
+
+$$\therefore f(A_{k}) \ge \Big( 1 - \frac{1}{e} \Big) f(A^*)$$​.
 
 ## References
 
