@@ -12,3 +12,4 @@
   * [\[2.1\] Local Stochastic Gradient Descent](convex\_optimization/local\_stochastic\_gradient\_descent.md)
   * [\[2.2\] Submodular](convex\_optimization/submodular/README.md)
     * [\[2.2.1\] Greedy Algorithm \[Proof\]](convex\_optimization/submodular/greedy-algorithm.md)
+  * [Zero-Order Optimization](convex\_optimization/zero-order-optimization.md)
