@@ -1,4 +1,4 @@
-# Channel Coding Theorem
+# \[1.2.2] Channel Coding Theorem
 
 > **Thm. (Channel Coding Theorem)** The maximum achievable rate $$R$$ is $$C= \max_{P_X} I(P_X , W)$$. To be precise, if $$R< C$$, then $$R$$ is achievable, and if $$R>C$$, then it is not achievable.
 
@@ -30,7 +30,7 @@
 
 ### :pen\_fountain: What is the meaning of achievable?
 
-$$R$$ is achievable means that** the message error probability goes to zero with the rate **$$R$$.
+$$R$$ is achievable means that **the message error probability goes to zero with the rate** $$R$$.
 
 We are given, fixed $$(n, R)$$ codes.
 
@@ -38,9 +38,9 @@ $$
 P_{e,m}^{(n)} = \text{Pr}(g_n(y^n)) \ne m| x^n(m))
 $$
 
-and **the maximum error probability **is $$P_{e, \text{max}}^{(n)} = \max_m P_{e,m}^{(n)}$$&#x20;
+and **the maximum error probability** is $$P_{e, \text{max}}^{(n)} = \max_m P_{e,m}^{(n)}$$&#x20;
 
-We say a rate $$R$$ is achievable if there exists**, a sequence of **$$(n, R)$$** codes (codebook)** such that $$P_{e, \text{max}}^{(n)} \rightarrow 0$$. Therefore with _achievable rate_, we can construct $$(n, R)$$ codes such that the maximum error goes to zero as $$n$$ goes to the infinity.
+We say a rate $$R$$ is achievable if there exists**, a sequence of** $$(n, R)$$ **codes (codebook)** such that $$P_{e, \text{max}}^{(n)} \rightarrow 0$$. Therefore with _achievable rate_, we can construct $$(n, R)$$ codes such that the maximum error goes to zero as $$n$$ goes to the infinity.
 
 ![Even though rate R achieves zero probability of the error, the decreasing speed differs for different R. Note that rates R1, R2, and R3 are achievable and rate R4 is not achievable](../../.gitbook/assets/슬라이드3.PNG)
 
@@ -56,7 +56,7 @@ $$
 P_n^{(n)} \ge 1- \frac{C}{R} - \frac{1}{nR}
 $$
 
-When $$R<C$$, the right hand side is bounded away from 0** (good)**
+When $$R<C$$, the right hand side is bounded away from 0 **(good)**
 
 When $$R>C$$, the right hand is is always positive, and the error never goes to $$0$$.&#x20;
 

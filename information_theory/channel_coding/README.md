@@ -1,4 +1,4 @@
-# Channel Coding
+# \[1.2] Channel Coding
 
 ## Channel
 
@@ -16,7 +16,7 @@ $$
 f_c^{(n)} : \{1,2,\cdots, 2^{nR} \} \rightarrow \mathcal{X}^n
 $$
 
-* **it outputs **$$m$$-th codeword: $$x^n(m) \in \mathcal{X}^n$$
+* **it outputs** $$m$$-th codeword: $$x^n(m) \in \mathcal{X}^n$$
 
 ## Channel Decoder
 

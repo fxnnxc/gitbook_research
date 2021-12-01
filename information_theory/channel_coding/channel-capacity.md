@@ -2,7 +2,7 @@
 description: This page explains the meaning of channel capacity
 ---
 
-# Channel Capacity
+# \[1.2.1] Channel Capacity
 
 ## :page\_facing\_up:Channel
 
@@ -19,8 +19,8 @@ Mathematically, the channel transmission is written by&#x20;
 {% hint style="info" %}
 Data compression and data transmission
 
-1. Data compression: we **remove **all the redundancy in the data to form the most compressed version possible.&#x20;
-2. Data transmission: we **add **redundancy in a controlled fashion to combat errors in the channel.&#x20;
+1. Data compression: we **remove** all the redundancy in the data to form the most compressed version possible.&#x20;
+2. Data transmission: we **add** redundancy in a controlled fashion to combat errors in the channel.&#x20;
 {% endhint %}
 
 #### 1) Examples of channel capacity: Noiseless Binary Channel&#x20;
@@ -61,7 +61,7 @@ Note that, when the mutual information between inputs and outputs increases, the
 
 
 
-an operational definition of channel capacity as **the highest rate in bits per channel use **at which information can be sent with arbitrarily low probability of error.&#x20;
+an operational definition of channel capacity as **the highest rate in bits per channel use** at which information can be sent with arbitrarily low probability of error.&#x20;
 
 &#x20;:star::star::star:Therefore, we can send maximally :star::star::star:
 
@@ -77,7 +77,7 @@ This can be interpreted as the number of distinguishable signals  for a bit in $
 2. $$Y^n$$ has to be divided into sets of size $$2^{nH(Y|X)}$$corresponding to the different input $$X$$.&#x20;
 3. The total number of disjoint sets is less than or equal to $$2^{n(H(Y) - H(Y|X)}$$
 
-**Therefore, we can send at most **$$\approx 2^{nI(X;Y)}$$**distinguishable sequences of length **$$n$$**.**
+**Therefore, we can send at most** $$\approx 2^{nI(X;Y)}$$**distinguishable sequences of length** $$n$$**.**
 
 
 

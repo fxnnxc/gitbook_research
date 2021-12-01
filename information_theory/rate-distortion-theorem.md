@@ -1,4 +1,4 @@
-# Rate Distortion Theorem
+# \[1.3] Rate Distortion Theorem
 
 When we want to represent continuous random variable with finite number of bits, we should design the mapping function so that the description achieves the minimum distortion. When have a continuous representation $$X$$ and want to describe it with finite $$\hat X$$.&#x20;
 
@@ -31,7 +31,7 @@ $$
 ​It is highly related to the mean squared error, but not a good metric for the human evaluation because most waveform includes small noise errors. (similar with image data)
 
 {% hint style="info" %}
-**Definition (The distortion associated **$$(2^{nR},n)$$**-rate distortion code)**
+**Definition (The distortion associated** $$(2^{nR},n)$$**-rate distortion code)**
 
 $$D=\mathbb{E}(d(X^n, g_n(f_n(X^n)))$$​
 
@@ -45,15 +45,15 @@ Here $$g_n(m) = \hat{X}^n(m)$$ is a codeword and $$f_n^{-1}(m)$$ is the **associ
 
 
 {% hint style="info" %}
-**Definition (achievable rate-distortion pair) **
+**Definition (achievable rate-distortion pair)**&#x20;
 
 A rate distortion pair $$(R,D)$$ is achievable if and only if there exists a sequence of $$(2^{nR}, n)$$-rate distortion codes $$(f_n, g_n)$$such that$$\lim_{n\rightarrow \infty} \mathbb{E}[d^{(n)} (X^n, g_n(f_n(X^n)))] \le D$$​
 
 * **The rate distortion region for a source** : the closure of the set of achievable rate distortion region of the source for a given distortion $$D$$.
-*   **The rate distortion function** $$R(D) = \inf\{R:(R,D) \text{~is achievable}\}$$ **for a given **$$D$$
+*   **The rate distortion function** $$R(D) = \inf\{R:(R,D) \text{~is achievable}\}$$ **for a given** $$D$$
 
     :star:(주어진 D를 만족하는 최소한의 rate R)​
-* **​The distortion rate function  **$$D(R)= \inf\{D: (R,D) \text{ is achievable}\}$$for a given $$R$$​
+* **​The distortion rate function**  $$D(R)= \inf\{D: (R,D) \text{ is achievable}\}$$for a given $$R$$​
 {% endhint %}
 
 {% hint style="info" %}
@@ -70,7 +70,7 @@ That is, ​ $$\inf\{R:(R,D) \text{~is achievable}\}= \min_{\{P_{Y|X}: \mathbb{E
     ****
 
     **-----**
-*   **Achievability: **
+*   **Achievability:**&#x20;
 
     $$R> I(P_X, P_{Y|X})$$-> the error goes to zero (**(R,D)** is achievable)
 *   **Converse**
