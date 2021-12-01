@@ -1,19 +1,26 @@
 # Markov Chain
 
+## Preliminary 
+
 The probability of moving to the next state **depends only on the present state** and not on the previous state.&#x20;
 
-* To define the Markov Chain we need a state space \$$\mathcal{X}=\\{\text{all possible states} \\}
-* Assume that we are at the timestep $$t=n$$
-* We have a transition history $$X_1 = x_1, X_2 = x_2, \cdots, X_n = x_n$$ 
+* **State space** $$\mathcal{X}=\{\text{all possible states} \}$$ (we need it to define the Markov Chain! )
+* Assume that we are at the timestep $$t=n$$ 
+* We have a transition history $$(X_1 = x_1, X_2 = x_2, \cdots, X_n = x_n)$$  
 * $$X_i$$ is a random variable and $$x_i$$ is a realization of the random variable. 
+
+## Markov Property 
 
 $$
 \begin{aligned}
- \text{Pr}(X_{n+1}  &=x | \text{previos history}) = \text{Pr}(X_{n+1}  =x | X_1 = x_1, X_2 = x_2, \cdots, X_n = x_n) \\ 
+ \text{Pr}(X_{n+1}  =x | \text{transition history}) &= \text{Pr}(X_{n+1}  =x | X_1 = x_1, X_2 = x_2, \cdots, X_n = x_n) \\ 
  &=\text{Pr}(X_{n+1}=x | X_n =x_n)
 \end{aligned}
 $$
 
+## Markov Chain
+
+Markov Chain is a sequence of random variables $$(X_1, X_2, \cdots, X_n)$$ with the **markov property**. 
 ### Example
 
 ![](../.gitbook/assets/image.png)
@@ -29,3 +36,4 @@ This hypothesis doesn't match the true situation because in most cases we select
 {% endhint %}
 
 Source: [https://en.wikipedia.org/wiki/Markov\_chain](https://en.wikipedia.org/wiki/Markov\_chain)
+ 
