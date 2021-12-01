@@ -15,4 +15,5 @@
   * [Zero-Order Optimization](convex\_optimization/zero-order-optimization.md)
 * [Markov Chain](markov-chain/README.md)
   * [Markov Chain](markov-chain/markov-chain.md)
+  * [Stationary Markov Chain](markov-chain/stationary-markov-chain.md)
   * [Reversible Markov](markov-chain/reversible-markov.md)
