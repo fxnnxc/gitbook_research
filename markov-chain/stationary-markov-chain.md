@@ -19,8 +19,20 @@ We have a distribution of the states $$\pi$$. The distribution of the next state
 
 ### Irreducible and reducible 
 
-* Irreducible : When there is a positive probability for each transition from $$i$$ to $$j$$. 
-* 
+* Irreducible :A Markov chain is irreducible if there is some integer k > 1 such that all the elements of Pk are nonzero.
+* Reducible : once we visit one of those states, we cannot visit other states
+
+
+reducible example 
+
+The fish is free to swim at any location as dictated by the currents, food, or presence of predators. Once the fish is caught in a net, it cannot escape and it has limited space
+where it can swim
+
+irreducible 
+
+Swimming fish in the ocean without caught.
+
+
 
 ## Stationary Markov Chain
 
