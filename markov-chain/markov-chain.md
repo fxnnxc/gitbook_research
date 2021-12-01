@@ -2,12 +2,17 @@
 
 The probability of moving to the next state **depends only on the present state** and not on the previous state.&#x20;
 
-$$
-\ Pr(X_{n+1}  =x |
-$$
-
-* where $$X_i$$ is a random variable form the sequence $$(X_1, X_2, \cdots, X_n)$$
 * To define the Markov Chain we need a state space \$$\mathcal{X}=\\{\text{all possible states} \\}
+* Assume that we are at the timestep $$t=n$$
+* We have a transition history $$X_1 = x_1, X_2 = x_2, \cdots, X_n = x_n$$ 
+* $$X_i$$ is a random variable and $$x_i$$ is a realization of the random variable. 
+
+$$
+\begin{aligned}
+ \text{Pr}(X_{n+1}  &=x | \text{previos history}) = \text{Pr}(X_{n+1}  =x | X_1 = x_1, X_2 = x_2, \cdots, X_n = x_n) \\ 
+ &=\text{Pr}(X_{n+1}=x | X_n =x_n)
+\end{aligned}
+$$
 
 ### Example
 
