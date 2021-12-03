@@ -36,7 +36,7 @@
 
 
 
-![n+8 까는 Underparametrized Regime으, Generalization Loss가 증가.](<../.gitbook/assets/image (1).png>)
+![n+1 까는 Underparametrized Regime으, Generalization Loss가 증가.](<../.gitbook/assets/image (1).png>)
 
 ### Underparameterized Regime&#x20;
 
@@ -47,6 +47,10 @@
 
 
 ### Overparameterized Regime
+
+> As stated in the following theorem, we require d ≥ n+8. This is merely a technical requirement and the entire spectrum of the overparametrized regime.
+
+
 
 > One can create a descent (Ld+1 < Ld) by adding a Gaussian feature (Theorem 8)&#x20;
 
