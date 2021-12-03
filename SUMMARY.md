@@ -19,3 +19,4 @@
   * [Reversible Markov](markov-chain/reversible-markov.md)
 * [🍟 Papers](papers/README.md)
   * [Minimizers of the Empirical Risk and Risk Monotonicity](papers/minimizers-of-the-empirical-risk-and-risk-monotonicity.md)
+  * [Multiple Descent: Design Your Own Generalization Curve](papers/multiple-descent-design-your-own-generalization-curve.md)
