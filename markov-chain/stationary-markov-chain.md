@@ -35,7 +35,7 @@ The fish is free to swim at any location as dictated by the currents, food, or p
 Swimming fish in the ocean without caught.
 {% endhint %}
 
-![](<../.gitbook/assets/image (1).png>)
+![](<../.gitbook/assets/image (1) (1).png>)
 
 * (a) Irreducible: We can go anywhere starting from any state
 * (b) Reducible: We can not go on of \[1,2,3] when we are at \[4,5]
