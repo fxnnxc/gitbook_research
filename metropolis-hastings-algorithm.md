@@ -39,7 +39,21 @@ Therefore, if the newly generated sample has higher probability than the previou
 
 ## Detailed Balance Condition
 
-The transition probability is \$$T(xk|2.
+The transition probability is 
+$$
+\begin{aligned}
+T(x_{k+1}|x_k) &= \min\Big( 1, \frac{P(x_{k+1}Q(x_k|x_{k+1}))}{P(x_k)Q(x_{x+1})}\Big) Q(x_{k+1} | x_k) \\
+&=  \min(Q(x_{k+1}|x_k),  P(x_{k+1}Q(x_k|x_{k+1})/P(x_k )) \\
+&= \frac{1}{P(x_k)} \min(P(x_k)Q(x_{k+1}|x_k),  P(x_{k+1}Q(x_k|x_{k+1})))
+\end{aligend}
+$$ 
+
+Note that two terms in the minimization part are symmetric with respect to switching of $$x_k$$ and $$x_{k+1}$$. We have
+$$
+T(x_{k+1} |x_{k}) P(x_k) = T(x_k |x_{k+1}) P(x_{k+1})
+$$
+
+
 
 
 
