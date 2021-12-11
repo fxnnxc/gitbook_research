@@ -8,6 +8,7 @@
     * [\[1.2.2\] Channel Coding Theorem](information\_theory/channel\_coding/channel\_coding\_theorem.md)
     * [\[1.2.3\] Source and Channel Separation Theorem](information\_theory/channel\_coding/source-and-channel-separation-theorem.md)
   * [\[1.3\] Rate Distortion Theorem](information\_theory/rate-distortion-theorem.md)
+  * [Information-theoretic Limits](information\_theory/information-theoretic-limits.md)
 * [\[2\] Convex Optimization](convex\_optimization/README.md)
   * [\[2.1\] Local Stochastic Gradient Descent](convex\_optimization/local\_stochastic\_gradient\_descent.md)
   * [\[2.2\] Submodular](convex\_optimization/submodular/README.md)
