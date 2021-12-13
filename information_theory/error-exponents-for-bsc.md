@@ -64,7 +64,7 @@ $$
 P_e = \mathrm{Pr}\Big( \cup_\gamma \mathcal{E}_\gamma \Big) \overset{\cdot}{=} 2^{-\min_\gamma E(\gamma)}
 $$
 
-where \$$E\_\gamma (R) = \min\_{\gamma \in \epsilon, 1/2)} (D(\gamma||\epsilon)+ \[D(\gamma||1/2) -R]^+)
+where $$E_\gamma (R) = \min_{\gamma \in \epsilon, 1/2)} (D(\gamma||\epsilon)+ [D(\gamma||1/2) -R]^+)$$
 
 Remark
 
@@ -75,6 +75,8 @@ It is clear that when there are less messages, we can easily find the original m
 First, let $$\gamma_{crit} = \arg \min_\gamma [D(\gamma||\epsilon) + D(\gamma ||1/2)]$$
 
 We can compute it exactly, $$\gamma_{critc} = \frac{\sqrt{\epsilon}}{\sqrt{\epsilon} + \sqrt{1 -\epsilon}}$$
+
+![](<../.gitbook/assets/image (3).png>)
 
 #### Case1: $$\gamma_{crit} < \gamma_{GV}(R)$$
 
@@ -87,3 +89,5 @@ It is a linear function of $$R$$.
 #### Case2: $$\gamma_{crit} > \gamma_{GV}(R)$$
 
 In this case, $$D_B(\gamma_{GV}(R)||1/2) < R$$ and $$E_\gamma (R) = \min_{\gamma \in \epsilon, 1/2)} D(\gamma||\epsilon)$$$$D_B(\gamma_{GV}(R)||1/2) < R$$ and $$E_\gamma (R) = D(\gamma||\epsilon)$$
+
+![](<../.gitbook/assets/image (2).png>)
