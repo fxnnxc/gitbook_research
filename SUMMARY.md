@@ -2,6 +2,7 @@
 
 * [😃 About me](README.md)
 * [\[1\] Information Theory](information\_theory/README.md)
+  * [Error Exponents for BSC](information\_theory/error-exponents-for-bsc.md)
   * [\[1.1\] Source Coding Theorem](information\_theory/source\_coding\_theorem.md)
   * [\[1.2\] Channel Coding](information\_theory/channel\_coding/README.md)
     * [\[1.2.1\] Channel Capacity](information\_theory/channel\_coding/channel-capacity.md)
