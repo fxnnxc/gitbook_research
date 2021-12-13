@@ -52,7 +52,7 @@ We consider two types of errors. For a given $$\gamma \in (\epsilon, 1/2)$$
 2. $$\text{Pr}(\exists m \ne 1 . ~s.t.~ |\hat X^n (m)| \le n\gamma) \overset{\cdot}{le} 2^{-n [D_B(\gamma||\epsilon) -R]}
 3. $$\mathcal{E}_\gamma = \{ |\hat X^n(1)| \ge n\gamma  \text{ AND } \exists m \ne 1 ~ s.t. ~ |\hat X^n(m)| \le n\gamma \}
 
-We can compute $$Pr(\mathcl{E}_\gamma)$$ easily by independence. 
+We can compute $$Pr(\mathcal{E}_\gamma)$$ easily by independence. 
 
 $$
 \mathrm{Pr}(\mathcal{E}_\gamma) \overset{\cdot}{\le} 2^{-n E(\gamma)}
@@ -63,7 +63,7 @@ where $$E(\gamma) = D(\gamma || \epsilon) + [D(\gamma||1/2) - R]^{+}
 
 The overall error probability is dominate by the smallest one. 
 $$
-P_e = \mathrm{Pr}\Big(  \cup_\gamma \mathcal{E}_\gamma \Big) \overset{\codt}{=} 2^{-\min_\gamma E(\gamma)}
+P_e = \mathrm{Pr}\Big(  \cup_\gamma \mathcal{E}_\gamma \Big) \overset{\cdot}{=} 2^{-\min_\gamma E(\gamma)}
 $$
 
 where $$E_\gamma (R) = \min_{\gamma \in \epsilon, 1/2)} (D(\gamma||\epsilon)+ [D(\gamma||1/2) -R]^+)
@@ -75,7 +75,7 @@ Remark
 ### Exponential Term analysis
 
 It is clear that when there are less messages, we can easily find the original message. Therefore, the error term is a decreasing function of the ratio.
-Also, for given rate $$R$$ there is appropriate gamma $$\gamm_{GV}(R)$$ such that $$D_B(\gamma_{GV}(R)||1/2) = R$$. 
+Also, for given rate $$R$$ there is appropriate gamma $$\gamma_{GV}(R)$$ such that $$D_B(\gamma_{GV}(R)||1/2) = R$$. 
 
 
 First, let $$\gamma_{crit} = \arg \min_\gamma [D(\gamma||\epsilon) + D(\gamma ||1/2)]
