@@ -91,3 +91,7 @@ It is a linear function of $$R$$.
 In this case, $$D_B(\gamma_{GV}(R)||1/2) < R$$ and $$E_\gamma (R) = \min_{\gamma \in \epsilon, 1/2)} D(\gamma||\epsilon)$$$$D_B(\gamma_{GV}(R)||1/2) < R$$ and $$E_\gamma (R) = D(\gamma||\epsilon)$$
 
 ![](<../.gitbook/assets/image (2).png>)
+
+
+
+\---
