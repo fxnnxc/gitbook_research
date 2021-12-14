@@ -42,8 +42,6 @@ Here $$g_n(m) = \hat{X}^n(m)$$ is a codeword and $$f_n^{-1}(m)$$ is the **associ
 
 
 
-
-
 {% hint style="info" %}
 **Definition (achievable rate-distortion pair)**&#x20;
 
@@ -81,16 +79,14 @@ That is, ​ $$\inf\{R:(R,D) \text{~is achievable}\}= \min_{\{P_{Y|X}: \mathbb{E
 
     :star::star:&#x20;
 
-    R < I(P\_x, P\_y|x) -> the error never goes to zero it is not achievable.&#x20;
+    $$R < I(P_x, P_y|x)$$ -> the error never goes to zero it is not achievable.&#x20;
 
     When distortion $$E[d(X^n, \hat X^n)] \ge D$$, then always $$R\ge R(D)$$
 
     This means, the ratio exceeds the $$R(D)$$
 {% endhint %}
 
-{% hint style="info" %}
 
-{% endhint %}
 
 
 

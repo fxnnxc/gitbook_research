@@ -23,3 +23,9 @@
 * [🍟 Papers](papers/README.md)
   * [Minimizers of the Empirical Risk and Risk Monotonicity](papers/minimizers-of-the-empirical-risk-and-risk-monotonicity.md)
   * [Multiple Descent: Design Your Own Generalization Curve](papers/multiple-descent-design-your-own-generalization-curve.md)
+* [Page 1](page-1.md)
+
+## Group 1
+
+* [Statistics](group-1/statistics/README.md)
+  * [t-test](group-1/statistics/t-test.md)
